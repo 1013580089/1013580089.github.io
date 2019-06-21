@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>Felix&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="Felix's Blog">
+  
+  <meta name="description" content="修改Docker的默认镜像存储位置默认情况下Docker的存放位置为：/var/lib/docker可以通过下面命令查看具体位置： 1sudo docker info | grep &quot;Docker Root Dir&quot;  数据盘挂在 /data 方案1：使用软链接方式（不建议，可以了解一下）1.首先停掉Docker服务： 1systemctl restart docker  或者 1service">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Felix&#39;s Blog">
+<meta property="og:url" content="http://yoursite.com/2019/04/16/修改Docker的默认镜像存储位置/index.html">
+<meta property="og:site_name" content="Felix&#39;s Blog">
+<meta property="og:description" content="修改Docker的默认镜像存储位置默认情况下Docker的存放位置为：/var/lib/docker可以通过下面命令查看具体位置： 1sudo docker info | grep &quot;Docker Root Dir&quot;  数据盘挂在 /data 方案1：使用软链接方式（不建议，可以了解一下）1.首先停掉Docker服务： 1systemctl restart docker  或者 1service">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-06-13T16:15:22.222Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Felix&#39;s Blog">
+<meta name="twitter:description" content="修改Docker的默认镜像存储位置默认情况下Docker的存放位置为：/var/lib/docker可以通过下面命令查看具体位置： 1sudo docker info | grep &quot;Docker Root Dir&quot;  数据盘挂在 /data 方案1：使用软链接方式（不建议，可以了解一下）1.首先停掉Docker服务： 1systemctl restart docker  或者 1service">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/pace.min.js"></script>
+  
+
+  
+  
+  <div style="display: none;">
+    <script src="//s22.cnzz.com/z_stat.php?id=1277741362&web_id=1277741362" language="JavaScript"></script>
+  </div>
+
+
+</head>
+</html>
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">Felix&#39;s Blog</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a  href="/">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a  href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>Archives</span>
+                    </a>
+                    
+                    <a  href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        Felix&#39;s Blog
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        Java，服务器后端开发
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="F" target="_blank" href="//sxpcsj.cn">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="//github.com/1013580089">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-修改Docker的默认镜像存储位置" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <h1 id="修改Docker的默认镜像存储位置"><a href="#修改Docker的默认镜像存储位置" class="headerlink" title="修改Docker的默认镜像存储位置"></a>修改Docker的默认镜像存储位置</h1><p>默认情况下Docker的存放位置为：/var/lib/docker<br>可以通过下面命令查看具体位置：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker info | grep "Docker Root Dir"</span><br></pre></td></tr></table></figure>
+
+<p>数据盘挂在 /data</p>
+<h2 id="方案1：使用软链接方式（不建议，可以了解一下）"><a href="#方案1：使用软链接方式（不建议，可以了解一下）" class="headerlink" title="方案1：使用软链接方式（不建议，可以了解一下）"></a>方案1：使用软链接方式（不建议，可以了解一下）</h2><p>1.首先停掉Docker服务：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart docker</span><br></pre></td></tr></table></figure>
+
+<p>或者</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service docker stop</span><br></pre></td></tr></table></figure>
+
+<p>2.对之前的数据做个文件备份</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -zcC /var/lib/docker &gt;/mnt/var_lib_docker-backup-$(date + %s).tar.gz</span><br></pre></td></tr></table></figure>
+
+<p>3.然后迁移整个/var/lib/docker目录到目的路径：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv /var/lib/docker /data/docker</span><br></pre></td></tr></table></figure>
+
+<p>4.建立symlink软链接</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ln -s /data/docke /var/lib/docker</span><br></pre></td></tr></table></figure>
+
+<p>5.确认文件夹类型为symlink 类型</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls -al /var/lib/docker</span><br></pre></td></tr></table></figure>
+
+<p>6.这时候启动Docker时发现存储目录依旧是/var/lib/docker，但是实际上是存储在数据盘的，你可以在数据盘上看到容量变化。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl start docker</span><br></pre></td></tr></table></figure>
+
+<h2 id="方案2：修改镜像和容器的默认存放路径"><a href="#方案2：修改镜像和容器的默认存放路径" class="headerlink" title="方案2：修改镜像和容器的默认存放路径"></a>方案2：修改镜像和容器的默认存放路径</h2><p>1.Docker的配置文件可以设置大部分的后台进程参数，在各个操作系统中的存放位置不一致，在 Ubuntu 中的位置是：/etc/default/docker，在 CentOS中的位置是：/etc/sysconfig/docker。<br>如果是 CentOS6 则添加下面这行：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">OPTIONS=--graph="/data/docker"--selinux-enabled -H fd://</span><br></pre></td></tr></table></figure>
+
+<p>如果是 Ubuntu 则添加下面这行（因为 Ubuntu 默认没开启 selinux）：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">OPTIONS=--graph="/data/docker" -H fd://</span><br></pre></td></tr></table></figure>
+
+<p>或者</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DOCKER_OPTS="-g /data/docker"</span><br></pre></td></tr></table></figure>
+
+<p>最后重新启动，Docker 的路径就改成 /data/docker 了。</p>
+<h3 id="如果是CentOS7-就是用如下："><a href="#如果是CentOS7-就是用如下：" class="headerlink" title="如果是CentOS7 就是用如下："></a>如果是CentOS7 就是用如下：</h3><p>修改docker.service文件，使用–graph参数指定存储位置</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo   vim   /usr/lib/systemd/system/docker.service</span><br></pre></td></tr></table></figure>
+
+<p>文本内容：ExecStart=/usr/bin/dockerd下面添加如下内容：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ExecStart=/usr/bin/dockerd --graph /data/tools/docker</span><br></pre></td></tr></table></figure>
+
+<p>2.修改完成后reload配置文件</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl daemon-reload</span><br></pre></td></tr></table></figure>
+
+<p>3.重启docker服务</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl  restart docker.service</span><br></pre></td></tr></table></figure>
+
+<h3 id="备注："><a href="#备注：" class="headerlink" title="备注："></a>备注：</h3><p>如果docker是1.12或以上的版本，可以修改（或新建）daemon.json文件。修改后会立即生效，不需重启docker服务。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo  vim  /etc/docker/daemon.json</span><br></pre></td></tr></table></figure>
+
+<p>修改如下：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;"registry-mirrors": ["http://***.***.com"],"graph":"/data/tools/docker"&#125;</span><br></pre></td></tr></table></figure>
+
+
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2019年06月14日 00:15</p>
+        <p>原始链接： <a class="post-url" href="/2019/04/16/修改Docker的默认镜像存储位置/" title="">http://yoursite.com/2019/04/16/修改Docker的默认镜像存储位置/</a></p>
+        <footer>
+            <a href="http://yoursite.com">
+                <img src="/images/logo.png" alt="Felix">
+                Felix
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/04/16/修改Docker的默认镜像存储位置/&title=Felix's Blog&pic=http://yoursite.comimages/logo.png" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/04/16/修改Docker的默认镜像存储位置/&title=Felix's Blog&source=Java，服务器后端开发" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/04/16/修改Docker的默认镜像存储位置/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=Felix's Blog&url=http://yoursite.com/2019/04/16/修改Docker的默认镜像存储位置/&via=http://yoursite.com" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/04/16/修改Docker的默认镜像存储位置/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2019/04/16/修改Docker的默认镜像存储位置/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#修改Docker的默认镜像存储位置"><span class="post-toc-text">修改Docker的默认镜像存储位置</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#方案1：使用软链接方式（不建议，可以了解一下）"><span class="post-toc-text">方案1：使用软链接方式（不建议，可以了解一下）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#方案2：修改镜像和容器的默认存放路径"><span class="post-toc-text">方案2：修改镜像和容器的默认存放路径</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#如果是CentOS7-就是用如下："><span class="post-toc-text">如果是CentOS7 就是用如下：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#备注："><span class="post-toc-text">备注：</span></a></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+    <a href="/2019/04/18/docker安装gitlab/" id="article-nav-newer" class="article-nav-link-wrap">
+
+      <span class="article-nav-title">
+        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
+        
+          (no title)
+        
+      </span>
+    </a>
+  
+  
+    <a href="/2019/04/15/Docker容器日志清理/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title"></span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+        <link rel="stylesheet" href="//unpkg.com/gitment/style/default.css">
+    <script src="//unpkg.com/gitment/dist/gitment.browser.js"></script>
+    <div id="comments">
+        <script>
+            var gitment = new Gitment({
+                owner: '1013580089',
+                repo: '1013580089.github.io',
+                oauth: {
+                    client_id: 'e84c9f7cfbe063914eb0',
+                    client_secret: 'f144df6b87162ac2de3a3fc6087c251a1a474c3a',
+                },
+            })
+            gitment.render('comments')
+        </script>
+    </div>
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+      &copy; 2019 Felix<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "http://yoursite.com",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 0
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            
+        </div>
+        <div id="sidebar-menu-box-tags">
+            
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a  href="/">
+                    <i class="fa fa-home"></i><span>Home</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/archives">
+                    <i class="fa fa-archive"></i><span>Archives</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/about">
+                    <i class="fa fa-user"></i><span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/js/search.js"></script>
+<script src="/js/main.js"></script>
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/js/particles.js"></script>
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/js/animate.js"></script>
+
+
+  <script src="/js/pop-img.js"></script>
+  <script>
+     $(".article-entry p img").popImg();
+  </script>
+
+  </div>
+</body>
+</html>

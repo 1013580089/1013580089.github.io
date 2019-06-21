@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>Felix&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="Felix's Blog">
+  
+  <meta name="description" content="Linux 安装 docker手动安装帮助 (阿里云ECS可以通过内网安装，见注释部分内容)CentOS 7 (使用yum进行安装)123456789101112131415161718192021222324252627282930313233343536# step 1: 安装必要的一些系统工具sudo yum updatesudo yum install -y yum-utils devic">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Felix&#39;s Blog">
+<meta property="og:url" content="http://yoursite.com/2019/04/15/安装docker/index.html">
+<meta property="og:site_name" content="Felix&#39;s Blog">
+<meta property="og:description" content="Linux 安装 docker手动安装帮助 (阿里云ECS可以通过内网安装，见注释部分内容)CentOS 7 (使用yum进行安装)123456789101112131415161718192021222324252627282930313233343536# step 1: 安装必要的一些系统工具sudo yum updatesudo yum install -y yum-utils devic">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-04-15T15:10:05.180Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Felix&#39;s Blog">
+<meta name="twitter:description" content="Linux 安装 docker手动安装帮助 (阿里云ECS可以通过内网安装，见注释部分内容)CentOS 7 (使用yum进行安装)123456789101112131415161718192021222324252627282930313233343536# step 1: 安装必要的一些系统工具sudo yum updatesudo yum install -y yum-utils devic">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/pace.min.js"></script>
+  
+
+  
+  
+  <div style="display: none;">
+    <script src="//s22.cnzz.com/z_stat.php?id=1277741362&web_id=1277741362" language="JavaScript"></script>
+  </div>
+
+
+</head>
+</html>
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">Felix&#39;s Blog</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a  href="/">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a  href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>Archives</span>
+                    </a>
+                    
+                    <a  href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        Felix&#39;s Blog
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        Java，服务器后端开发
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="F" target="_blank" href="//sxpcsj.cn">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="//github.com/1013580089">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-安装docker" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <h1 id="Linux-安装-docker"><a href="#Linux-安装-docker" class="headerlink" title="Linux 安装 docker"></a>Linux 安装 docker</h1><h2 id="手动安装帮助-阿里云ECS可以通过内网安装，见注释部分内容"><a href="#手动安装帮助-阿里云ECS可以通过内网安装，见注释部分内容" class="headerlink" title="手动安装帮助 (阿里云ECS可以通过内网安装，见注释部分内容)"></a>手动安装帮助 (阿里云ECS可以通过内网安装，见注释部分内容)</h2><h3 id="CentOS-7-使用yum进行安装"><a href="#CentOS-7-使用yum进行安装" class="headerlink" title="CentOS 7 (使用yum进行安装)"></a>CentOS 7 (使用yum进行安装)</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> step 1: 安装必要的一些系统工具</span></span><br><span class="line">sudo yum update</span><br><span class="line">sudo yum install -y yum-utils device-mapper-persistent-data lvm2</span><br><span class="line"><span class="meta">#</span><span class="bash"> Step 2: 添加软件源信息</span></span><br><span class="line">sudo yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo</span><br><span class="line"><span class="meta">#</span><span class="bash"> Step 3: 更新并安装 Docker-CE</span></span><br><span class="line">sudo yum makecache fast</span><br><span class="line">sudo yum -y install docker-ce</span><br><span class="line"><span class="meta">#</span><span class="bash"> Step 4: 开启Docker服务</span></span><br><span class="line">sudo service docker start</span><br><span class="line"></span><br><span class="line">注意：其他注意事项在下面的注释中</span><br><span class="line"><span class="meta">#</span><span class="bash"> 官方软件源默认启用了最新的软件，您可以通过编辑软件源的方式获取各个版本的软件包。例如官方并没有将测试版本的软件源置为可用，你可以通过以下方式开启。同理可以开启各种测试版本等。</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> vim /etc/yum.repos.d/docker-ce.repo</span></span><br><span class="line"><span class="meta">#</span><span class="bash">   将 [docker-ce-test] 下方的 enabled=0 修改为 enabled=1</span></span><br><span class="line"><span class="meta">#</span><span class="bash"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 安装指定版本的Docker-CE:</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> Step 1: 查找Docker-CE的版本:</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> yum list docker-ce.x86_64 --showduplicates | sort -r</span></span><br><span class="line"><span class="meta">#</span><span class="bash">   Loading mirror speeds from cached hostfile</span></span><br><span class="line"><span class="meta">#</span><span class="bash">   Loaded plugins: branch, fastestmirror, langpacks</span></span><br><span class="line"><span class="meta">#</span><span class="bash">   docker-ce.x86_64            17.03.1.ce-1.el7.centos            docker-ce-stable</span></span><br><span class="line"><span class="meta">#</span><span class="bash">   docker-ce.x86_64            17.03.1.ce-1.el7.centos            @docker-ce-stable</span></span><br><span class="line"><span class="meta">#</span><span class="bash">   docker-ce.x86_64            17.03.0.ce-1.el7.centos            docker-ce-stable</span></span><br><span class="line"><span class="meta">#</span><span class="bash">   Available Packages</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> Step2 : 安装指定版本的Docker-CE: (VERSION 例如上面的 17.03.0.ce.1-1.el7.centos)</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> sudo yum -y install docker-ce-[VERSION]</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 注意：在某些版本之后，docker-ce安装出现了其他依赖包，如果安装失败的话请关注错误信息。例如 docker-ce 17.03 之后，需要先安装 docker-ce-selinux。</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> yum list docker-ce-selinux- --showduplicates | sort -r</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> sudo yum -y install docker-ce-selinux-[VERSION]</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 通过经典网络、VPC网络内网安装时，用以下命令替换Step 2中的命令</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 经典网络：</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> sudo yum-config-manager --add-repo http://mirrors.aliyuncs.com/docker-ce/linux/centos/docker-ce.repo</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> VPC网络：</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> sudo yum-config-manager --add-repo http://mirrors.could.aliyuncs.com/docker-ce/linux/centos/docker-ce.repo</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Ubuntu-14-04-16-04-使用apt-get进行安装"><a href="#Ubuntu-14-04-16-04-使用apt-get进行安装" class="headerlink" title="Ubuntu 14.04 16.04 (使用apt-get进行安装)"></a>Ubuntu 14.04 16.04 (使用apt-get进行安装)</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> step 1: 安装必要的一些系统工具</span></span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get -y install apt-transport-https ca-certificates curl software-properties-common</span><br><span class="line"><span class="meta">#</span><span class="bash"> step 2: 安装GPG证书</span></span><br><span class="line">curl -fsSL http://mirrors.aliyun.com/docker-ce/linux/ubuntu/gpg | sudo apt-key add -</span><br><span class="line"><span class="meta">#</span><span class="bash"> Step 3: 写入软件源信息</span></span><br><span class="line">sudo add-apt-repository "deb [arch=amd64] http://mirrors.aliyun.com/docker-ce/linux/ubuntu $(lsb_release -cs) stable"</span><br><span class="line"><span class="meta">#</span><span class="bash"> Step 4: 更新并安装 Docker-CE</span></span><br><span class="line">sudo apt-get -y update</span><br><span class="line">sudo apt-get -y install docker-ce</span><br><span class="line"></span><br><span class="line">注意：其他注意事项在下面的注释中</span><br><span class="line"><span class="meta">#</span><span class="bash"> 安装指定版本的Docker-CE:</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> Step 1: 查找Docker-CE的版本:</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> apt-cache madison docker-ce</span></span><br><span class="line"><span class="meta">#</span><span class="bash">   docker-ce | 17.03.1~ce-0~ubuntu-xenial | http://mirrors.aliyun.com/docker-ce/linux/ubuntu xenial/stable amd64 Packages</span></span><br><span class="line"><span class="meta">#</span><span class="bash">   docker-ce | 17.03.0~ce-0~ubuntu-xenial | http://mirrors.aliyun.com/docker-ce/linux/ubuntu xenial/stable amd64 Packages</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> Step 2: 安装指定版本的Docker-CE: (VERSION 例如上面的 17.03.1~ce-0~ubuntu-xenial)</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> sudo apt-get -y install docker-ce=[VERSION]</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 通过经典网络、VPC网络内网安装时，用以下命令替换Step 2、Step 3中的命令</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 经典网络：</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> curl -fsSL http://mirrors.aliyuncs.com/docker-ce/linux/ubuntu/gpg | sudo apt-key add -</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> sudo add-apt-repository <span class="string">"deb [arch=amd64] http://mirrors.aliyuncs.com/docker-ce/linux/ubuntu <span class="variable">$(lsb_release -cs)</span> stable"</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> VPC网络：</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> curl -fsSL http://mirrors.cloud.aliyuncs.com/docker-ce/linux/ubuntu/gpg | sudo apt-key add -</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> sudo add-apt-repository <span class="string">"deb [arch=amd64] http://mirrors.cloud.aliyuncs.com/docker-ce/linux/ubuntu <span class="variable">$(lsb_release -cs)</span> stable"</span></span></span><br></pre></td></tr></table></figure>
+
+<h2 id="使用官方安装脚本自动安装-（仅适用于公网环境）"><a href="#使用官方安装脚本自动安装-（仅适用于公网环境）" class="headerlink" title="使用官方安装脚本自动安装 （仅适用于公网环境）"></a>使用官方安装脚本自动安装 （仅适用于公网环境）</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun</span><br></pre></td></tr></table></figure>
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2019年04月15日 23:10</p>
+        <p>原始链接： <a class="post-url" href="/2019/04/15/安装docker/" title="">http://yoursite.com/2019/04/15/安装docker/</a></p>
+        <footer>
+            <a href="http://yoursite.com">
+                <img src="/images/logo.png" alt="Felix">
+                Felix
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/04/15/安装docker/&title=Felix's Blog&pic=http://yoursite.comimages/logo.png" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/04/15/安装docker/&title=Felix's Blog&source=Java，服务器后端开发" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/04/15/安装docker/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=Felix's Blog&url=http://yoursite.com/2019/04/15/安装docker/&via=http://yoursite.com" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/04/15/安装docker/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2019/04/15/安装docker/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Linux-安装-docker"><span class="post-toc-text">Linux 安装 docker</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#手动安装帮助-阿里云ECS可以通过内网安装，见注释部分内容"><span class="post-toc-text">手动安装帮助 (阿里云ECS可以通过内网安装，见注释部分内容)</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#CentOS-7-使用yum进行安装"><span class="post-toc-text">CentOS 7 (使用yum进行安装)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Ubuntu-14-04-16-04-使用apt-get进行安装"><span class="post-toc-text">Ubuntu 14.04 16.04 (使用apt-get进行安装)</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#使用官方安装脚本自动安装-（仅适用于公网环境）"><span class="post-toc-text">使用官方安装脚本自动安装 （仅适用于公网环境）</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+    <a href="/2019/04/15/docker加速器配置/" id="article-nav-newer" class="article-nav-link-wrap">
+
+      <span class="article-nav-title">
+        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
+        
+          (no title)
+        
+      </span>
+    </a>
+  
+  
+</nav>
+
+
+
+    
+        <link rel="stylesheet" href="//unpkg.com/gitment/style/default.css">
+    <script src="//unpkg.com/gitment/dist/gitment.browser.js"></script>
+    <div id="comments">
+        <script>
+            var gitment = new Gitment({
+                owner: '1013580089',
+                repo: '1013580089.github.io',
+                oauth: {
+                    client_id: 'e84c9f7cfbe063914eb0',
+                    client_secret: 'f144df6b87162ac2de3a3fc6087c251a1a474c3a',
+                },
+            })
+            gitment.render('comments')
+        </script>
+    </div>
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+      &copy; 2019 Felix<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "http://yoursite.com",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 0
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            
+        </div>
+        <div id="sidebar-menu-box-tags">
+            
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a  href="/">
+                    <i class="fa fa-home"></i><span>Home</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/archives">
+                    <i class="fa fa-archive"></i><span>Archives</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/about">
+                    <i class="fa fa-user"></i><span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/js/search.js"></script>
+<script src="/js/main.js"></script>
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/js/particles.js"></script>
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/js/animate.js"></script>
+
+
+  <script src="/js/pop-img.js"></script>
+  <script>
+     $(".article-entry p img").popImg();
+  </script>
+
+  </div>
+</body>
+</html>
