@@ -273,20 +273,23 @@
 
     <div id="comments">
         
-	<script type="text/javascript" src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
-<script>
-    var gitment = new Gitment({
-        id: window.location.pathname,
-        owner:"FelixSuXP",
-        repo:"FelixSu.github.io",
-        oauth: {
-          client_id:"e84c9f7cfbe063914eb0",
-          client_secret:"f144df6b87162ac2de3a3fc6087c251a1a474c3a"
-        },
-        perPage:"10",
-    });
-    gitment.render('comments');
-</script>
+	<link rel="stylesheet" href="/gitment/gitment.css">
+<script src="/gitment/gitment.js"></script>
+<div id="comments">
+    <script>
+        var gitment = new Gitment({
+            id: '修改Docker的默认镜像存储位置',
+            owner: 'FelixSuXP',
+            repo: 'FelixSu.github.io',
+            oauth: {
+                client_id: 'e84c9f7cfbe063914eb0',
+                client_secret: 'f144df6b87162ac2de3a3fc6087c251a1a474c3a',
+            },
+        })
+        gitment.render('comments')
+    </script>
+</div>
+
 
     </div>
 
