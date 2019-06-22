@@ -3,21 +3,22 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
-  <title>Felix&#39;s Blog</title>
+  <title>Linux 安装 docker | Felix&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
     <meta name="keywords" content="Felix's Blog">
   
   <meta name="description" content="Linux 安装 docker手动安装帮助 (阿里云ECS可以通过内网安装，见注释部分内容)CentOS 7 (使用yum进行安装)123456789101112131415161718192021222324252627282930313233343536# step 1: 安装必要的一些系统工具sudo yum updatesudo yum install -y yum-utils devic">
+<meta name="keywords" content="docker">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Felix&#39;s Blog">
-<meta property="og:url" content="https://www.sxpcsj.cn/2019/04/15/安装docker/index.html">
+<meta property="og:title" content="Linux 安装 docker">
+<meta property="og:url" content="https://www.sxpcsj.cn/2019/06/22/安装docker/index.html">
 <meta property="og:site_name" content="Felix&#39;s Blog">
 <meta property="og:description" content="Linux 安装 docker手动安装帮助 (阿里云ECS可以通过内网安装，见注释部分内容)CentOS 7 (使用yum进行安装)123456789101112131415161718192021222324252627282930313233343536# step 1: 安装必要的一些系统工具sudo yum updatesudo yum install -y yum-utils devic">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-15T15:10:05.180Z">
+<meta property="og:updated_time" content="2019-06-22T07:17:58.411Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Felix&#39;s Blog">
+<meta name="twitter:title" content="Linux 安装 docker">
 <meta name="twitter:description" content="Linux 安装 docker手动安装帮助 (阿里云ECS可以通过内网安装，见注释部分内容)CentOS 7 (使用yum进行安装)123456789101112131415161718192021222324252627282930313233343536# step 1: 安装必要的一些系统工具sudo yum updatesudo yum install -y yum-utils devic">
   
   
@@ -110,6 +111,36 @@
         <section id="main" class="body-wrap"><article id="post-安装docker" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      Linux 安装 docker
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+              <li>
+                  <i class="fa fa-book"></i>
+                  
+                      <a href="/categories/docker/">docker</a>
+                  
+              </li>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2019-06-22
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
     <div class="article-entry post-content" itemprop="articleBody">
       
             
@@ -118,10 +149,12 @@
 <h3 id="Ubuntu-14-04-16-04-使用apt-get进行安装"><a href="#Ubuntu-14-04-16-04-使用apt-get进行安装" class="headerlink" title="Ubuntu 14.04 16.04 (使用apt-get进行安装)"></a>Ubuntu 14.04 16.04 (使用apt-get进行安装)</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> step 1: 安装必要的一些系统工具</span></span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get -y install apt-transport-https ca-certificates curl software-properties-common</span><br><span class="line"><span class="meta">#</span><span class="bash"> step 2: 安装GPG证书</span></span><br><span class="line">curl -fsSL http://mirrors.aliyun.com/docker-ce/linux/ubuntu/gpg | sudo apt-key add -</span><br><span class="line"><span class="meta">#</span><span class="bash"> Step 3: 写入软件源信息</span></span><br><span class="line">sudo add-apt-repository "deb [arch=amd64] http://mirrors.aliyun.com/docker-ce/linux/ubuntu $(lsb_release -cs) stable"</span><br><span class="line"><span class="meta">#</span><span class="bash"> Step 4: 更新并安装 Docker-CE</span></span><br><span class="line">sudo apt-get -y update</span><br><span class="line">sudo apt-get -y install docker-ce</span><br><span class="line"></span><br><span class="line">注意：其他注意事项在下面的注释中</span><br><span class="line"><span class="meta">#</span><span class="bash"> 安装指定版本的Docker-CE:</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> Step 1: 查找Docker-CE的版本:</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> apt-cache madison docker-ce</span></span><br><span class="line"><span class="meta">#</span><span class="bash">   docker-ce | 17.03.1~ce-0~ubuntu-xenial | http://mirrors.aliyun.com/docker-ce/linux/ubuntu xenial/stable amd64 Packages</span></span><br><span class="line"><span class="meta">#</span><span class="bash">   docker-ce | 17.03.0~ce-0~ubuntu-xenial | http://mirrors.aliyun.com/docker-ce/linux/ubuntu xenial/stable amd64 Packages</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> Step 2: 安装指定版本的Docker-CE: (VERSION 例如上面的 17.03.1~ce-0~ubuntu-xenial)</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> sudo apt-get -y install docker-ce=[VERSION]</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 通过经典网络、VPC网络内网安装时，用以下命令替换Step 2、Step 3中的命令</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 经典网络：</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> curl -fsSL http://mirrors.aliyuncs.com/docker-ce/linux/ubuntu/gpg | sudo apt-key add -</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> sudo add-apt-repository <span class="string">"deb [arch=amd64] http://mirrors.aliyuncs.com/docker-ce/linux/ubuntu <span class="variable">$(lsb_release -cs)</span> stable"</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> VPC网络：</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> curl -fsSL http://mirrors.cloud.aliyuncs.com/docker-ce/linux/ubuntu/gpg | sudo apt-key add -</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> sudo add-apt-repository <span class="string">"deb [arch=amd64] http://mirrors.cloud.aliyuncs.com/docker-ce/linux/ubuntu <span class="variable">$(lsb_release -cs)</span> stable"</span></span></span><br></pre></td></tr></table></figure>
 
 <h2 id="使用官方安装脚本自动安装-（仅适用于公网环境）"><a href="#使用官方安装脚本自动安装-（仅适用于公网环境）" class="headerlink" title="使用官方安装脚本自动安装 （仅适用于公网环境）"></a>使用官方安装脚本自动安装 （仅适用于公网环境）</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun</span><br></pre></td></tr></table></figure>
+
+
             <div class="post-copyright">
     <div class="content">
-        <p>最后更新： 2019年04月15日 23:10</p>
-        <p>原始链接： <a class="post-url" href="/2019/04/15/安装docker/" title="">https://www.sxpcsj.cn/2019/04/15/安装docker/</a></p>
+        <p>最后更新： 2019年06月22日 15:17</p>
+        <p>原始链接： <a class="post-url" href="/2019/06/22/安装docker/" title="Linux 安装 docker">https://www.sxpcsj.cn/2019/06/22/安装docker/</a></p>
         <footer>
             <a href="https://www.sxpcsj.cn">
                 <img src="/images/logo.png" alt="Felix">
@@ -147,7 +180,7 @@
     <div class="post-share-list" id="share-list">
         <ul class="share-icons">
           <li>
-            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.sxpcsj.cn/2019/04/15/安装docker/&title=Felix's Blog&pic=https://www.sxpcsj.cnimages/logo.png" data-title="微博">
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.sxpcsj.cn/2019/06/22/安装docker/&title=《Linux 安装 docker》 — Felix's Blog&pic=https://www.sxpcsj.cnimages/logo.png" data-title="微博">
               <i class="fa fa-weibo"></i>
             </a>
           </li>
@@ -157,22 +190,22 @@
             </a>
           </li>
           <li>
-            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.sxpcsj.cn/2019/04/15/安装docker/&title=Felix's Blog&source=Java，服务器后端开发" data-title="QQ">
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.sxpcsj.cn/2019/06/22/安装docker/&title=《Linux 安装 docker》 — Felix's Blog&source=Java，服务器后端开发" data-title="QQ">
               <i class="fa fa-qq"></i>
             </a>
           </li>
           <li>
-            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.sxpcsj.cn/2019/04/15/安装docker/" data-title="Facebook">
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.sxpcsj.cn/2019/06/22/安装docker/" data-title="Facebook">
               <i class="fa fa-facebook"></i>
             </a>
           </li>
           <li>
-            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=Felix's Blog&url=https://www.sxpcsj.cn/2019/04/15/安装docker/&via=https://www.sxpcsj.cn" data-title="Twitter">
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Linux 安装 docker》 — Felix's Blog&url=https://www.sxpcsj.cn/2019/06/22/安装docker/&via=https://www.sxpcsj.cn" data-title="Twitter">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
           <li>
-            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.sxpcsj.cn/2019/04/15/安装docker/" data-title="Google+">
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.sxpcsj.cn/2019/06/22/安装docker/" data-title="Google+">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -182,7 +215,7 @@
 <div class="post-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;" id="wxShare-close">×</a>
     <p>扫一扫，分享到微信</p>
-    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://www.sxpcsj.cn/2019/04/15/安装docker/" alt="微信分享二维码">
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://www.sxpcsj.cn/2019/06/22/安装docker/" alt="微信分享二维码">
 </div>
 
 <div class="mask"></div>
@@ -191,6 +224,13 @@
         <ul class="article-footer-menu">
             
             
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/docker/" class="color2">docker</a>
+      
+  </li>
+
         </ul>
         
     </footer>
@@ -207,12 +247,12 @@
 
 <nav id="article-nav">
   
-    <a href="/2019/04/15/docker加速器配置/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/06/22/非root用户运行docker/" id="article-nav-newer" class="article-nav-link-wrap">
 
       <span class="article-nav-title">
         <i class="fa fa-hand-o-left" aria-hidden="true"></i>
         
-          (no title)
+          非root用户运行docker
         
       </span>
     </a>
@@ -293,10 +333,10 @@
 <div class="sidebar-menu-box" id="sidebar-menu-box">
     <div class="sidebar-menu-box-container">
         <div id="sidebar-menu-box-categories">
-            
+            <a class="category-link" href="/categories/docker/">docker</a>
         </div>
         <div id="sidebar-menu-box-tags">
-            
+            <a href="/tags/docker/" style="font-size: 10px;">docker</a>
         </div>
     </div>
     <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
@@ -329,7 +369,7 @@
     <div class="mobile-header-tag-container">
         <span class="title">Tags</span>
         <div id="mobile-header-container-tags">
-            
+            <a href="/tags/docker/" style="font-size: 10px;">docker</a>
         </div>
     </div>
 </div>

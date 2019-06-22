@@ -108,30 +108,40 @@
       <div class="outer">
         <section id="main" class="body-wrap">
   
-    <article id="post-非root用户运行docker" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-Docker容器日志清理" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/06/22/Docker容器日志清理/"  >Docker安装gitlab</a>
+    </h1>
+  
+
+          
+              <span class="header-cate">
+                <i class="fa fa-map-marker"></i>
+                  
+                  <a href="/categories/docker/">docker</a>
+                  
+              </span>
+          
+      </header>
     
     <div class="article-entry " itemprop="articleBody">
       
         <div class="article-img">
-            <a href="/2019/06/10/非root用户运行docker/" >
+            <a href="/2019/06/22/Docker容器日志清理/" >
                 
-                <img src="https://www.sxpcsj.cn/images/banner.jpg" alt="" title="">
+                <img src="https://www.sxpcsj.cn/images/banner.jpg" alt="Docker安装gitlab" title="Docker安装gitlab">
                 
             </a>
         </div>
         <div class="article-feed">
             <p>
-                1、 首先创建docker用户组，如果docker用户组存在可以忽略
-1sudo groupadd docker
-
-2、把用户添加进docker组中
-1sudo gpasswd -a $&#123;USER&#125; docker
-
-3、重启docker
-1sudo service docker restart
-
-4、如果普通用户执行docker命令，如果提示get …...
+                Docker容器日志清理清理Docker容器日志（治标）新建日志清理脚本clean_docker_log.sh，内容如下：
+123456789#!/bin/shecho "======== start clean docker containers logs ========"logs=$(find /var/lib/docker/containers/ -name *-...
             </p>
         </div>
       
@@ -141,12 +151,19 @@
         
         <ul class="article-footer-menu">
             
-                <li><i class="fa fa-calendar"></i>2019-06-10</li>
+                <li><i class="fa fa-calendar"></i>2019-06-22</li>
             
             
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/docker/" class="color2">docker</a>
+      
+  </li>
+
         </ul>
         
-            <a href="/2019/06/10/非root用户运行docker/#more" class="article-more-link" >more&gt;&gt;</a>
+            <a href="/2019/06/22/Docker容器日志清理/#more" class="article-more-link" >more&gt;&gt;</a>
         
     </footer>
   </div>
@@ -154,23 +171,41 @@
 
 
   
-    <article id="post-安装docker-compose" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-docker加速器配置" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/06/22/docker加速器配置/"  >docker 加速器</a>
+    </h1>
+  
+
+          
+              <span class="header-cate">
+                <i class="fa fa-map-marker"></i>
+                  
+                  <a href="/categories/docker/">docker</a>
+                  
+              </span>
+          
+      </header>
     
     <div class="article-entry " itemprop="articleBody">
       
         <div class="article-img">
-            <a href="/2019/06/10/安装docker-compose/" >
+            <a href="/2019/06/22/docker加速器配置/" >
                 
-                <img src="https://www.sxpcsj.cn/images/banner.jpg" alt="" title="">
+                <img src="https://www.sxpcsj.cn/images/banner.jpg" alt="docker 加速器" title="docker 加速器">
                 
             </a>
         </div>
         <div class="article-feed">
             <p>
-                1sudo curl -L &quot;https://github.com/docker/compose/releases/download/1.24.0/docker-compose-$(uname -s)-$(uname -m)&quot; -o /usr/local/bin/docker-compose
-
-1sudo chmod +x /usr/local/bin...
+                docker 加速器常用的加速器服务：
+Docker 官方的中国镜像加速器：从2017年6月9日起，Docker 官方提供了在中国的加速器，以解决墙的问题。不用注册，直接使用加速器地址：https://registry.docker-cn.com 即可。
+中国科技大学的镜像加速器：中科大的加速器不用注册，直接使用地址 https://docker.mirrors.ustc...
             </p>
         </div>
       
@@ -180,12 +215,19 @@
         
         <ul class="article-footer-menu">
             
-                <li><i class="fa fa-calendar"></i>2019-06-10</li>
+                <li><i class="fa fa-calendar"></i>2019-06-22</li>
             
             
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/docker/" class="color2">docker</a>
+      
+  </li>
+
         </ul>
         
-            <a href="/2019/06/10/安装docker-compose/#more" class="article-more-link" >more&gt;&gt;</a>
+            <a href="/2019/06/22/docker加速器配置/#more" class="article-more-link" >more&gt;&gt;</a>
         
     </footer>
   </div>
@@ -196,12 +238,30 @@
     <article id="post-docker安装gitlab" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/06/22/docker安装gitlab/"  >Docker安装gitlab</a>
+    </h1>
+  
+
+          
+              <span class="header-cate">
+                <i class="fa fa-map-marker"></i>
+                  
+                  <a href="/categories/docker/">docker</a>
+                  
+              </span>
+          
+      </header>
+    
     <div class="article-entry " itemprop="articleBody">
       
         <div class="article-img">
-            <a href="/2019/04/18/docker安装gitlab/" >
+            <a href="/2019/06/22/docker安装gitlab/" >
                 
-                <img src="https://www.sxpcsj.cn/images/banner.jpg" alt="" title="">
+                <img src="https://www.sxpcsj.cn/images/banner.jpg" alt="Docker安装gitlab" title="Docker安装gitlab">
                 
             </a>
         </div>
@@ -217,12 +277,83 @@
         
         <ul class="article-footer-menu">
             
-                <li><i class="fa fa-calendar"></i>2019-04-18</li>
+                <li><i class="fa fa-calendar"></i>2019-06-22</li>
             
             
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/docker/" class="color2">docker</a>
+      
+  </li>
+
         </ul>
         
-            <a href="/2019/04/18/docker安装gitlab/#more" class="article-more-link" >more&gt;&gt;</a>
+            <a href="/2019/06/22/docker安装gitlab/#more" class="article-more-link" >more&gt;&gt;</a>
+        
+    </footer>
+  </div>
+</article>
+
+
+  
+    <article id="post-安装docker-compose" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/06/22/安装docker-compose/"  >安装docker-compose</a>
+    </h1>
+  
+
+          
+              <span class="header-cate">
+                <i class="fa fa-map-marker"></i>
+                  
+                  <a href="/categories/docker/">docker</a>
+                  
+              </span>
+          
+      </header>
+    
+    <div class="article-entry " itemprop="articleBody">
+      
+        <div class="article-img">
+            <a href="/2019/06/22/安装docker-compose/" >
+                
+                <img src="https://www.sxpcsj.cn/images/banner.jpg" alt="安装docker-compose" title="安装docker-compose">
+                
+            </a>
+        </div>
+        <div class="article-feed">
+            <p>
+                安装docker-compose1sudo curl -L &quot;https://github.com/docker/compose/releases/download/1.24.0/docker-compose-$(uname -s)-$(uname -m)&quot; -o /usr/local/bin/docker-compose
+
+1sudo chmod +...
+            </p>
+        </div>
+      
+        
+    </div>
+    <footer class="article-footer">
+        
+        <ul class="article-footer-menu">
+            
+                <li><i class="fa fa-calendar"></i>2019-06-22</li>
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/docker/" class="color2">docker</a>
+      
+  </li>
+
+        </ul>
+        
+            <a href="/2019/06/22/安装docker-compose/#more" class="article-more-link" >more&gt;&gt;</a>
         
     </footer>
   </div>
@@ -233,12 +364,30 @@
     <article id="post-修改Docker的默认镜像存储位置" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/06/22/修改Docker的默认镜像存储位置/"  >修改Docker的默认镜像存储位置</a>
+    </h1>
+  
+
+          
+              <span class="header-cate">
+                <i class="fa fa-map-marker"></i>
+                  
+                  <a href="/categories/docker/">docker</a>
+                  
+              </span>
+          
+      </header>
+    
     <div class="article-entry " itemprop="articleBody">
       
         <div class="article-img">
-            <a href="/2019/04/16/修改Docker的默认镜像存储位置/" >
+            <a href="/2019/06/22/修改Docker的默认镜像存储位置/" >
                 
-                <img src="https://www.sxpcsj.cn/images/banner.jpg" alt="" title="">
+                <img src="https://www.sxpcsj.cn/images/banner.jpg" alt="修改Docker的默认镜像存储位置" title="修改Docker的默认镜像存储位置">
                 
             </a>
         </div>
@@ -260,12 +409,19 @@
         
         <ul class="article-footer-menu">
             
-                <li><i class="fa fa-calendar"></i>2019-04-16</li>
+                <li><i class="fa fa-calendar"></i>2019-06-22</li>
             
             
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/docker/" class="color2">docker</a>
+      
+  </li>
+
         </ul>
         
-            <a href="/2019/04/16/修改Docker的默认镜像存储位置/#more" class="article-more-link" >more&gt;&gt;</a>
+            <a href="/2019/06/22/修改Docker的默认镜像存储位置/#more" class="article-more-link" >more&gt;&gt;</a>
         
     </footer>
   </div>
@@ -273,22 +429,48 @@
 
 
   
-    <article id="post-Docker容器日志清理" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-非root用户运行docker" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/06/22/非root用户运行docker/"  >非root用户运行docker</a>
+    </h1>
+  
+
+          
+              <span class="header-cate">
+                <i class="fa fa-map-marker"></i>
+                  
+                  <a href="/categories/docker/">docker</a>
+                  
+              </span>
+          
+      </header>
     
     <div class="article-entry " itemprop="articleBody">
       
         <div class="article-img">
-            <a href="/2019/04/15/Docker容器日志清理/" >
+            <a href="/2019/06/22/非root用户运行docker/" >
                 
-                <img src="https://www.sxpcsj.cn/images/banner.jpg" alt="" title="">
+                <img src="https://www.sxpcsj.cn/images/banner.jpg" alt="非root用户运行docker" title="非root用户运行docker">
                 
             </a>
         </div>
         <div class="article-feed">
             <p>
-                Docker容器日志清理清理Docker容器日志（治标）新建日志清理脚本clean_docker_log.sh，内容如下：
-123456789#!/bin/shecho "======== start clean docker containers logs ========"logs=$(find /var/lib/docker/containers/ -name *-...
+                非root用户运行docker1、 首先创建docker用户组，如果docker用户组存在可以忽略
+1sudo groupadd docker
+
+2、把用户添加进docker组中
+1sudo gpasswd -a $&#123;USER&#125; docker
+
+3、重启docker
+1sudo service docker restart
+
+4、如果普通用户执行doc...
             </p>
         </div>
       
@@ -298,51 +480,19 @@
         
         <ul class="article-footer-menu">
             
-                <li><i class="fa fa-calendar"></i>2019-04-15</li>
+                <li><i class="fa fa-calendar"></i>2019-06-22</li>
             
             
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/docker/" class="color2">docker</a>
+      
+  </li>
+
         </ul>
         
-            <a href="/2019/04/15/Docker容器日志清理/#more" class="article-more-link" >more&gt;&gt;</a>
-        
-    </footer>
-  </div>
-</article>
-
-
-  
-    <article id="post-docker加速器配置" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry " itemprop="articleBody">
-      
-        <div class="article-img">
-            <a href="/2019/04/15/docker加速器配置/" >
-                
-                <img src="https://www.sxpcsj.cn/images/banner.jpg" alt="" title="">
-                
-            </a>
-        </div>
-        <div class="article-feed">
-            <p>
-                docker 加速器常用的加速器服务：
-Docker 官方的中国镜像加速器：从2017年6月9日起，Docker 官方提供了在中国的加速器，以解决墙的问题。不用注册，直接使用加速器地址：https://registry.docker-cn.com 即可。
-中国科技大学的镜像加速器：中科大的加速器不用注册，直接使用地址 https://docker.mirrors.ustc...
-            </p>
-        </div>
-      
-        
-    </div>
-    <footer class="article-footer">
-        
-        <ul class="article-footer-menu">
-            
-                <li><i class="fa fa-calendar"></i>2019-04-15</li>
-            
-            
-        </ul>
-        
-            <a href="/2019/04/15/docker加速器配置/#more" class="article-more-link" >more&gt;&gt;</a>
+            <a href="/2019/06/22/非root用户运行docker/#more" class="article-more-link" >more&gt;&gt;</a>
         
     </footer>
   </div>
@@ -353,12 +503,30 @@ Docker 官方的中国镜像加速器：从2017年6月9日起，Docker 官方提
     <article id="post-安装docker" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/06/22/安装docker/"  >Linux 安装 docker</a>
+    </h1>
+  
+
+          
+              <span class="header-cate">
+                <i class="fa fa-map-marker"></i>
+                  
+                  <a href="/categories/docker/">docker</a>
+                  
+              </span>
+          
+      </header>
+    
     <div class="article-entry " itemprop="articleBody">
       
         <div class="article-img">
-            <a href="/2019/04/15/安装docker/" >
+            <a href="/2019/06/22/安装docker/" >
                 
-                <img src="https://www.sxpcsj.cn/images/banner.jpg" alt="" title="">
+                <img src="https://www.sxpcsj.cn/images/banner.jpg" alt="Linux 安装 docker" title="Linux 安装 docker">
                 
             </a>
         </div>
@@ -374,12 +542,19 @@ Docker 官方的中国镜像加速器：从2017年6月9日起，Docker 官方提
         
         <ul class="article-footer-menu">
             
-                <li><i class="fa fa-calendar"></i>2019-04-15</li>
+                <li><i class="fa fa-calendar"></i>2019-06-22</li>
             
             
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/docker/" class="color2">docker</a>
+      
+  </li>
+
         </ul>
         
-            <a href="/2019/04/15/安装docker/#more" class="article-more-link" >more&gt;&gt;</a>
+            <a href="/2019/06/22/安装docker/#more" class="article-more-link" >more&gt;&gt;</a>
         
     </footer>
   </div>
@@ -441,10 +616,10 @@ Docker 官方的中国镜像加速器：从2017年6月9日起，Docker 官方提
 <div class="sidebar-menu-box" id="sidebar-menu-box">
     <div class="sidebar-menu-box-container">
         <div id="sidebar-menu-box-categories">
-            
+            <a class="category-link" href="/categories/docker/">docker</a>
         </div>
         <div id="sidebar-menu-box-tags">
-            
+            <a href="/tags/docker/" style="font-size: 10px;">docker</a>
         </div>
     </div>
     <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
@@ -477,7 +652,7 @@ Docker 官方的中国镜像加速器：从2017年6月9日起，Docker 官方提
     <div class="mobile-header-tag-container">
         <span class="title">Tags</span>
         <div id="mobile-header-container-tags">
-            
+            <a href="/tags/docker/" style="font-size: 10px;">docker</a>
         </div>
     </div>
 </div>

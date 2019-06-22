@@ -3,22 +3,21 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
-  <title>Felix&#39;s Blog</title>
+  <title>Tag: docker | Felix&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
     <meta name="keywords" content="Felix's Blog">
   
-  <meta name="description" content="1、 首先创建docker用户组，如果docker用户组存在可以忽略 1sudo groupadd docker  2、把用户添加进docker组中 1sudo gpasswd -a $&amp;#123;USER&amp;#125; docker  3、重启docker 1sudo service docker restart  4、如果普通用户执行docker命令，如果提示get …… dial unix /">
-<meta property="og:type" content="article">
+  <meta name="description" content="Java，服务器后端开发">
+<meta property="og:type" content="website">
 <meta property="og:title" content="Felix&#39;s Blog">
-<meta property="og:url" content="https://www.sxpcsj.cn/2019/06/10/非root用户运行docker/index.html">
+<meta property="og:url" content="https://www.sxpcsj.cn/tags/docker/index.html">
 <meta property="og:site_name" content="Felix&#39;s Blog">
-<meta property="og:description" content="1、 首先创建docker用户组，如果docker用户组存在可以忽略 1sudo groupadd docker  2、把用户添加进docker组中 1sudo gpasswd -a $&amp;#123;USER&amp;#125; docker  3、重启docker 1sudo service docker restart  4、如果普通用户执行docker命令，如果提示get …… dial unix /">
+<meta property="og:description" content="Java，服务器后端开发">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-10T13:27:56.237Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Felix&#39;s Blog">
-<meta name="twitter:description" content="1、 首先创建docker用户组，如果docker用户组存在可以忽略 1sudo groupadd docker  2、把用户添加进docker组中 1sudo gpasswd -a $&amp;#123;USER&amp;#125; docker  3、重启docker 1sudo service docker restart  4、如果普通用户执行docker命令，如果提示get …… dial unix /">
+<meta name="twitter:description" content="Java，服务器后端开发">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -107,136 +106,245 @@
     </div>
 </header>
       <div class="outer">
-        <section id="main" class="body-wrap"><article id="post-非root用户运行docker" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
+        <section id="main" class="body-wrap">
+  
+  
     
-    <div class="article-entry post-content" itemprop="articleBody">
+    
       
-            
-            <p>1、 首先创建docker用户组，如果docker用户组存在可以忽略</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo groupadd docker</span><br></pre></td></tr></table></figure>
-
-<p>2、把用户添加进docker组中</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo gpasswd -a $&#123;USER&#125; docker</span><br></pre></td></tr></table></figure>
-
-<p>3、重启docker</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service docker restart</span><br></pre></td></tr></table></figure>
-
-<p>4、如果普通用户执行docker命令，如果提示get …… dial unix /var/run/docker.sock权限不够，则修改/var/run/docker.sock权限<br>使用root用户执行如下命令，即可</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chmod a+rw /var/run/docker.sock</span><br></pre></td></tr></table></figure>
-
-
-            <div class="post-copyright">
-    <div class="content">
-        <p>最后更新： 2019年06月10日 21:27</p>
-        <p>原始链接： <a class="post-url" href="/2019/06/10/非root用户运行docker/" title="">https://www.sxpcsj.cn/2019/06/10/非root用户运行docker/</a></p>
-        <footer>
-            <a href="https://www.sxpcsj.cn">
-                <img src="/images/logo.png" alt="Felix">
-                Felix
-            </a>
-        </footer>
-    </div>
-</div>
-
       
-        
-            
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2019" class="archive-year">2019</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2019/06/22/Docker容器日志清理/" class="archive-article-date">
+  <time datetime="2019-06-21T17:50:32.000Z" itemprop="datePublished">06-22</time>
+</a>
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2019/06/22/Docker容器日志清理/"  >Docker安装gitlab</a>
+    </h1>
+  
 
-        
-    </div>
-    <footer class="article-footer">
-        
-        
-<div class="post-share">
-    <a href="javascript:;" id="share-sub" class="post-share-fab">
-        <i class="fa fa-share-alt"></i>
-    </a>
-    <div class="post-share-list" id="share-list">
-        <ul class="share-icons">
-          <li>
-            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.sxpcsj.cn/2019/06/10/非root用户运行docker/&title=Felix's Blog&pic=https://www.sxpcsj.cnimages/logo.png" data-title="微博">
-              <i class="fa fa-weibo"></i>
-            </a>
-          </li>
-          <li>
-            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
-              <i class="fa fa-weixin"></i>
-            </a>
-          </li>
-          <li>
-            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.sxpcsj.cn/2019/06/10/非root用户运行docker/&title=Felix's Blog&source=Java，服务器后端开发" data-title="QQ">
-              <i class="fa fa-qq"></i>
-            </a>
-          </li>
-          <li>
-            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.sxpcsj.cn/2019/06/10/非root用户运行docker/" data-title="Facebook">
-              <i class="fa fa-facebook"></i>
-            </a>
-          </li>
-          <li>
-            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=Felix's Blog&url=https://www.sxpcsj.cn/2019/06/10/非root用户运行docker/&via=https://www.sxpcsj.cn" data-title="Twitter">
-              <i class="fa fa-twitter"></i>
-            </a>
-          </li>
-          <li>
-            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.sxpcsj.cn/2019/06/10/非root用户运行docker/" data-title="Google+">
-              <i class="fa fa-google-plus"></i>
-            </a>
-          </li>
-        </ul>
-     </div>
-</div>
-<div class="post-modal wx-share" id="wxShare">
-    <a class="close" href="javascript:;" id="wxShare-close">×</a>
-    <p>扫一扫，分享到微信</p>
-    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://www.sxpcsj.cn/2019/06/10/非root用户运行docker/" alt="微信分享二维码">
-</div>
-
-<div class="mask"></div>
-
-        
-        <ul class="article-footer-menu">
+    </header>
+      
+        <div class="archive-post-footer">
             
-            
-        </ul>
-        
-    </footer>
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/docker/" class="color2">docker</a>
+      
+  </li>
+
+        </div>
+      
   </div>
 </article>
 
-
-
-<nav id="article-nav">
   
-  
-    <a href="/2019/06/10/安装docker-compose/" id="article-nav-older" class="article-nav-link-wrap">
-      <span class="article-nav-title"></span>
-      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
-    </a>
-  
-</nav>
-
-
-
     
-        <link rel="stylesheet" href="//unpkg.com/gitment/style/default.css">
-    <script src="//unpkg.com/gitment/dist/gitment.browser.js"></script>
-    <div id="comments">
-        <script>
-            var gitment = new Gitment({
-                owner: '1013580089',
-                repo: '1013580089.github.io',
-                oauth: {
-                    client_id: 'e84c9f7cfbe063914eb0',
-                    client_secret: 'f144df6b87162ac2de3a3fc6087c251a1a474c3a',
-                },
-            })
-            gitment.render('comments')
-        </script>
-    </div>
-
     
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2019/06/22/docker加速器配置/" class="archive-article-date">
+  <time datetime="2019-06-21T17:50:32.000Z" itemprop="datePublished">06-22</time>
+</a>
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2019/06/22/docker加速器配置/"  >docker 加速器</a>
+    </h1>
+  
+
+    </header>
+      
+        <div class="archive-post-footer">
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/docker/" class="color2">docker</a>
+      
+  </li>
+
+        </div>
+      
+  </div>
+</article>
+
+  
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2019/06/22/docker安装gitlab/" class="archive-article-date">
+  <time datetime="2019-06-21T17:50:32.000Z" itemprop="datePublished">06-22</time>
+</a>
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2019/06/22/docker安装gitlab/"  >Docker安装gitlab</a>
+    </h1>
+  
+
+    </header>
+      
+        <div class="archive-post-footer">
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/docker/" class="color2">docker</a>
+      
+  </li>
+
+        </div>
+      
+  </div>
+</article>
+
+  
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2019/06/22/安装docker-compose/" class="archive-article-date">
+  <time datetime="2019-06-21T17:50:32.000Z" itemprop="datePublished">06-22</time>
+</a>
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2019/06/22/安装docker-compose/"  >安装docker-compose</a>
+    </h1>
+  
+
+    </header>
+      
+        <div class="archive-post-footer">
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/docker/" class="color2">docker</a>
+      
+  </li>
+
+        </div>
+      
+  </div>
+</article>
+
+  
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2019/06/22/修改Docker的默认镜像存储位置/" class="archive-article-date">
+  <time datetime="2019-06-21T17:50:32.000Z" itemprop="datePublished">06-22</time>
+</a>
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2019/06/22/修改Docker的默认镜像存储位置/"  >修改Docker的默认镜像存储位置</a>
+    </h1>
+  
+
+    </header>
+      
+        <div class="archive-post-footer">
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/docker/" class="color2">docker</a>
+      
+  </li>
+
+        </div>
+      
+  </div>
+</article>
+
+  
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2019/06/22/非root用户运行docker/" class="archive-article-date">
+  <time datetime="2019-06-21T17:50:32.000Z" itemprop="datePublished">06-22</time>
+</a>
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2019/06/22/非root用户运行docker/"  >非root用户运行docker</a>
+    </h1>
+  
+
+    </header>
+      
+        <div class="archive-post-footer">
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/docker/" class="color2">docker</a>
+      
+  </li>
+
+        </div>
+      
+  </div>
+</article>
+
+  
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2019/06/22/安装docker/" class="archive-article-date">
+  <time datetime="2019-06-21T17:50:32.000Z" itemprop="datePublished">06-22</time>
+</a>
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2019/06/22/安装docker/"  >Linux 安装 docker</a>
+    </h1>
+  
+
+    </header>
+      
+        <div class="archive-post-footer">
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/docker/" class="color2">docker</a>
+      
+  </li>
+
+        </div>
+      
+  </div>
+</article>
+
+  
+  
+    </div></section>
+  
+
 </section>
         
       </div>
@@ -290,10 +398,10 @@
 <div class="sidebar-menu-box" id="sidebar-menu-box">
     <div class="sidebar-menu-box-container">
         <div id="sidebar-menu-box-categories">
-            
+            <a class="category-link" href="/categories/docker/">docker</a>
         </div>
         <div id="sidebar-menu-box-tags">
-            
+            <a href="/tags/docker/" style="font-size: 10px;">docker</a>
         </div>
     </div>
     <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
@@ -326,7 +434,7 @@
     <div class="mobile-header-tag-container">
         <span class="title">Tags</span>
         <div id="mobile-header-container-tags">
-            
+            <a href="/tags/docker/" style="font-size: 10px;">docker</a>
         </div>
     </div>
 </div>
