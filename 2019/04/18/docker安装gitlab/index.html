@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>Felix&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="Felix's Blog">
+  
+  <meta name="description" content="Docker安装gitlab1、docker-compose.yaml123456789101112131415version: &apos;3.0&apos;services:    gitlab:        image: gitlab/gitlab-ce        restart: always        container_name: gitlab        ports:">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Felix&#39;s Blog">
+<meta property="og:url" content="https://www.sxpcsj.cn/2019/04/18/docker安装gitlab/index.html">
+<meta property="og:site_name" content="Felix&#39;s Blog">
+<meta property="og:description" content="Docker安装gitlab1、docker-compose.yaml123456789101112131415version: &apos;3.0&apos;services:    gitlab:        image: gitlab/gitlab-ce        restart: always        container_name: gitlab        ports:">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-04-18T15:26:14.622Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Felix&#39;s Blog">
+<meta name="twitter:description" content="Docker安装gitlab1、docker-compose.yaml123456789101112131415version: &apos;3.0&apos;services:    gitlab:        image: gitlab/gitlab-ce        restart: always        container_name: gitlab        ports:">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/pace.min.js"></script>
+  
+
+  
+  
+  <div style="display: none;">
+    <script src="//s22.cnzz.com/z_stat.php?id=1277741362&web_id=1277741362" language="JavaScript"></script>
+  </div>
+
+
+</head>
+</html>
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">Felix&#39;s Blog</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a  href="/">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a  href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>Archives</span>
+                    </a>
+                    
+                    <a  href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        Felix&#39;s Blog
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        Java，服务器后端开发
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="F" target="_blank" href="//www.sxpcsj.cn">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="//github.com/1013580089">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-docker安装gitlab" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <h1 id="Docker安装gitlab"><a href="#Docker安装gitlab" class="headerlink" title="Docker安装gitlab"></a>Docker安装gitlab</h1><h2 id="1、docker-compose-yaml"><a href="#1、docker-compose-yaml" class="headerlink" title="1、docker-compose.yaml"></a>1、docker-compose.yaml</h2><figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">version: <span class="string">'3.0'</span></span><br><span class="line">services:</span><br><span class="line">    gitlab:</span><br><span class="line">        image: gitlab/gitlab-ce</span><br><span class="line">        restart: always</span><br><span class="line">        container_name: gitlab</span><br><span class="line">        ports:</span><br><span class="line">            - <span class="string">"10443:443"</span></span><br><span class="line">            - <span class="string">"10080:80"</span></span><br><span class="line">            - <span class="string">"10022:22"</span></span><br><span class="line">        volumes:</span><br><span class="line">            - /usr/share/zoneinfo/Asia/Shanghai:/etc/localtime:ro</span><br><span class="line">            - ./gitlab/config:/etc/gitlab</span><br><span class="line">            - ./gitlab/logs:/var/log/gitlab</span><br><span class="line">            - ./gitlab/data:/var/opt/gitlab</span><br></pre></td></tr></table></figure>
+
+<h2 id="2、修改gitlab-rb文件"><a href="#2、修改gitlab-rb文件" class="headerlink" title="2、修改gitlab.rb文件"></a>2、修改gitlab.rb文件</h2><h3 id="1）把external-url改成部署机器的域名或者IP地址"><a href="#1）把external-url改成部署机器的域名或者IP地址" class="headerlink" title="1）把external_url改成部署机器的域名或者IP地址"></a>1）把external_url改成部署机器的域名或者IP地址</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim ./gitlab/config/gitlab.rb</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 配置http协议所使用的访问地址,不加端口号默认为80</span></span><br><span class="line">external_url <span class="string">'http://git.sxp.com'</span></span><br><span class="line"><span class="comment"># 配置ssh协议所使用的访问地址和端口</span></span><br><span class="line">gitlab_rails[<span class="string">'gitlab_ssh_host'</span>] = <span class="string">'git.sxp.com'</span></span><br><span class="line">gitlab_rails[<span class="string">'gitlab_shell_ssh_port'</span>] = 10023 <span class="comment"># 此端口是run时22端口映射的10022端口</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="2）启用https支持"><a href="#2）启用https支持" class="headerlink" title="2）启用https支持"></a>2）启用https支持</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim ./gitlab/config/gitlab.rb</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">external_url <span class="string">'http://git.sxp.com'</span></span><br><span class="line">nginx[<span class="string">'redirect_http_to_https'</span>] = <span class="literal">true</span></span><br><span class="line">nginx[<span class="string">'ssl_certificate'</span>] = <span class="string">"/etc/gitlab/ssl/sxp.com.pem"</span></span><br><span class="line">nginx[<span class="string">'ssl_certificate_key'</span>] = <span class="string">"/etc/gitlab/ssl/sxp.com.key"</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="3）配置邮件发送功能"><a href="#3）配置邮件发送功能" class="headerlink" title="3）配置邮件发送功能"></a>3）配置邮件发送功能</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim ./gitlab/config/gitlab.rb</span><br></pre></td></tr></table></figure>
+
+<h4 id="阿里云邮箱"><a href="#阿里云邮箱" class="headerlink" title="阿里云邮箱"></a>阿里云邮箱</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">gitlab_rails[<span class="string">'smtp_enable'</span>] = <span class="literal">true</span></span><br><span class="line">gitlab_rails[<span class="string">'smtp_address'</span>] = <span class="string">"smtp.sxp.com"</span></span><br><span class="line">gitlab_rails[<span class="string">'smtp_port'</span>] = 465</span><br><span class="line">gitlab_rails[<span class="string">'smtp_user_name'</span>] = <span class="string">"sxp@sxp.com"</span></span><br><span class="line">gitlab_rails[<span class="string">'smtp_password'</span>] = <span class="string">"12345678"</span></span><br><span class="line">gitlab_rails[<span class="string">'smtp_domain'</span>] = <span class="string">"smtp.sxp.com"</span></span><br><span class="line">gitlab_rails[<span class="string">'smtp_authentication'</span>] = <span class="string">"login"</span></span><br><span class="line">gitlab_rails[<span class="string">'smtp_enable_starttls_auto'</span>] = <span class="literal">true</span></span><br><span class="line">gitlab_rails[<span class="string">'smtp_tls'</span>] = <span class="literal">true</span></span><br><span class="line">gitlab_rails[<span class="string">'smtp_openssl_verify_mode'</span>] = <span class="string">'none'</span></span><br><span class="line"></span><br><span class="line">gitlab_rails[<span class="string">'gitlab_email_from'</span>] = <span class="string">'sxp@sxp.com'</span></span><br><span class="line">user[<span class="string">'git_user_email'</span>] = <span class="string">"sxp@sxp.com"</span></span><br></pre></td></tr></table></figure>
+
+<p>#### </p>
+
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2019年04月18日 23:26</p>
+        <p>原始链接： <a class="post-url" href="/2019/04/18/docker安装gitlab/" title="">https://www.sxpcsj.cn/2019/04/18/docker安装gitlab/</a></p>
+        <footer>
+            <a href="https://www.sxpcsj.cn">
+                <img src="/images/logo.png" alt="Felix">
+                Felix
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.sxpcsj.cn/2019/04/18/docker安装gitlab/&title=Felix's Blog&pic=https://www.sxpcsj.cnimages/logo.png" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.sxpcsj.cn/2019/04/18/docker安装gitlab/&title=Felix's Blog&source=Java，服务器后端开发" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.sxpcsj.cn/2019/04/18/docker安装gitlab/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=Felix's Blog&url=https://www.sxpcsj.cn/2019/04/18/docker安装gitlab/&via=https://www.sxpcsj.cn" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.sxpcsj.cn/2019/04/18/docker安装gitlab/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://www.sxpcsj.cn/2019/04/18/docker安装gitlab/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Docker安装gitlab"><span class="post-toc-text">Docker安装gitlab</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1、docker-compose-yaml"><span class="post-toc-text">1、docker-compose.yaml</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2、修改gitlab-rb文件"><span class="post-toc-text">2、修改gitlab.rb文件</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1）把external-url改成部署机器的域名或者IP地址"><span class="post-toc-text">1）把external_url改成部署机器的域名或者IP地址</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2）启用https支持"><span class="post-toc-text">2）启用https支持</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3）配置邮件发送功能"><span class="post-toc-text">3）配置邮件发送功能</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#阿里云邮箱"><span class="post-toc-text">阿里云邮箱</span></a></li></ol></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+    <a href="/2019/06/10/安装docker-compose/" id="article-nav-newer" class="article-nav-link-wrap">
+
+      <span class="article-nav-title">
+        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
+        
+          (no title)
+        
+      </span>
+    </a>
+  
+  
+    <a href="/2019/04/16/修改Docker的默认镜像存储位置/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title"></span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+        <link rel="stylesheet" href="//unpkg.com/gitment/style/default.css">
+    <script src="//unpkg.com/gitment/dist/gitment.browser.js"></script>
+    <div id="comments">
+        <script>
+            var gitment = new Gitment({
+                owner: '1013580089',
+                repo: '1013580089.github.io',
+                oauth: {
+                    client_id: 'e84c9f7cfbe063914eb0',
+                    client_secret: 'f144df6b87162ac2de3a3fc6087c251a1a474c3a',
+                },
+            })
+            gitment.render('comments')
+        </script>
+    </div>
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="https://www.sxpcsj.cn/" target="_blank">Felix's Blog</a>
+      &copy; 2019 Felix<br>
+      </p>
+    </div>
+  </div>
+</footer>
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "https://www.sxpcsj.cn",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 0
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            
+        </div>
+        <div id="sidebar-menu-box-tags">
+            
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a  href="/">
+                    <i class="fa fa-home"></i><span>Home</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/archives">
+                    <i class="fa fa-archive"></i><span>Archives</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/about">
+                    <i class="fa fa-user"></i><span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/js/search.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/js/animate.js"></script>
+
+
+  <script src="/js/pop-img.js"></script>
+  <script>
+     $(".article-entry p img").popImg();
+  </script>
+
+  </div>
+</body>
+</html>
