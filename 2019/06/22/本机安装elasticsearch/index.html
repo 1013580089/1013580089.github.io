@@ -3,23 +3,24 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
-  <title>非root用户运行docker | Felix Su&#39;s Blog</title>
+  <title>本机安装elasticsearch | Felix Su&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
     <meta name="keywords" content="Felix Su's Blog">
   
-  <meta name="description" content="非root用户运行docker1、 首先创建docker用户组，如果docker用户组存在可以忽略 1sudo groupadd docker  2、把用户添加进docker组中 1sudo gpasswd -a $&amp;#123;USER&amp;#125; docker  3、重启docker 1sudo service docker restart  4、如果普通用户执行docker命令，如果提示get">
-<meta name="keywords" content="docker">
+  <meta name="description" content="本机安装elasticsearch elasticsearch版本 — 6.2.4  修改配置文件 123127.0.0.1    peer1127.0.0.1    peer2127.0.0.1    peer3  分别修改elasticsearch.yaml文件 123456789101112131415# 第一个配置文件改动如下# 集群名称(必须一样)cluster.name: es_clu">
 <meta property="og:type" content="article">
-<meta property="og:title" content="非root用户运行docker">
-<meta property="og:url" content="https://www.sxpcsj.cn/2019/06/22/非root用户运行docker/index.html">
+<meta property="og:title" content="本机安装elasticsearch">
+<meta property="og:url" content="https://www.sxpcsj.cn/2019/06/22/本机安装elasticsearch/index.html">
 <meta property="og:site_name" content="Felix Su&#39;s Blog">
-<meta property="og:description" content="非root用户运行docker1、 首先创建docker用户组，如果docker用户组存在可以忽略 1sudo groupadd docker  2、把用户添加进docker组中 1sudo gpasswd -a $&amp;#123;USER&amp;#125; docker  3、重启docker 1sudo service docker restart  4、如果普通用户执行docker命令，如果提示get">
+<meta property="og:description" content="本机安装elasticsearch elasticsearch版本 — 6.2.4  修改配置文件 123127.0.0.1    peer1127.0.0.1    peer2127.0.0.1    peer3  分别修改elasticsearch.yaml文件 123456789101112131415# 第一个配置文件改动如下# 集群名称(必须一样)cluster.name: es_clu">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-22T07:17:49.064Z">
+<meta property="og:image" content="https://www.sxpcsj.cn/Users/sxp/Documents/%E7%AC%94%E8%AE%B0/elasticsearch/image-20190428115741440.png">
+<meta property="og:updated_time" content="2019-06-22T10:32:07.306Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="非root用户运行docker">
-<meta name="twitter:description" content="非root用户运行docker1、 首先创建docker用户组，如果docker用户组存在可以忽略 1sudo groupadd docker  2、把用户添加进docker组中 1sudo gpasswd -a $&amp;#123;USER&amp;#125; docker  3、重启docker 1sudo service docker restart  4、如果普通用户执行docker命令，如果提示get">
+<meta name="twitter:title" content="本机安装elasticsearch">
+<meta name="twitter:description" content="本机安装elasticsearch elasticsearch版本 — 6.2.4  修改配置文件 123127.0.0.1    peer1127.0.0.1    peer2127.0.0.1    peer3  分别修改elasticsearch.yaml文件 123456789101112131415# 第一个配置文件改动如下# 集群名称(必须一样)cluster.name: es_clu">
+<meta name="twitter:image" content="https://www.sxpcsj.cn/Users/sxp/Documents/%E7%AC%94%E8%AE%B0/elasticsearch/image-20190428115741440.png">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -108,24 +109,17 @@
     </div>
 </header>
       <div class="outer">
-        <section id="main" class="body-wrap"><article id="post-非root用户运行docker" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main" class="body-wrap"><article id="post-本机安装elasticsearch" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="post-title" itemprop="name">
-      非root用户运行docker
+      本机安装elasticsearch
     </h1>
     <div class="post-title-bar">
       <ul>
-          
-              <li>
-                  <i class="fa fa-book"></i>
-                  
-                      <a href="/categories/docker/">docker</a>
-                  
-              </li>
           
         <li>
           <i class="fa fa-calendar"></i>  2019-06-22
@@ -144,23 +138,31 @@
     <div class="article-entry post-content" itemprop="articleBody">
       
             
-            <h1 id="非root用户运行docker"><a href="#非root用户运行docker" class="headerlink" title="非root用户运行docker"></a>非root用户运行docker</h1><p>1、 首先创建docker用户组，如果docker用户组存在可以忽略</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo groupadd docker</span><br></pre></td></tr></table></figure>
+            <h1 id="本机安装elasticsearch"><a href="#本机安装elasticsearch" class="headerlink" title="本机安装elasticsearch"></a>本机安装elasticsearch</h1><ol>
+<li><p>elasticsearch版本 — 6.2.4</p>
+</li>
+<li><p>修改配置文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1    peer1</span><br><span class="line">127.0.0.1    peer2</span><br><span class="line">127.0.0.1    peer3</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>分别修改elasticsearch.yaml文件</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 第一个配置文件改动如下</span></span><br><span class="line"><span class="comment"># 集群名称(必须一样)</span></span><br><span class="line"><span class="string">cluster.name:</span> <span class="string">es_cluster</span></span><br><span class="line"><span class="comment"># 节点名称(必须不一样)</span></span><br><span class="line"><span class="string">node.name:</span> <span class="string">es-1</span></span><br><span class="line"><span class="comment"># 本机的IP地址</span></span><br><span class="line"><span class="string">network.host:</span> <span class="string">peer1</span></span><br><span class="line"><span class="comment"># 服务的端口号(在本地配置多个时，请注意修改为不一样的端口)</span></span><br><span class="line"><span class="string">http.port:</span> <span class="number">9201</span></span><br><span class="line"><span class="comment"># 服务发现端口</span></span><br><span class="line"><span class="string">transport.tcp.port:</span> <span class="number">9301</span></span><br><span class="line"><span class="comment"># 集群发现IP集合</span></span><br><span class="line"><span class="string">discovery.zen.ping.unicast.hosts:</span> <span class="string">["peer1:9301",</span> <span class="string">"peer2:9302"</span><span class="string">,"peer3:9303"]</span></span><br><span class="line"><span class="comment"># 设置在选举master节点需要参与的最少候选节点数，默认为 1，合理数值为 master-eligible nodes / 2 + 1，master-eligible nodes为集群中的候选主节点数</span></span><br><span class="line"><span class="string">discovery.zen.minimum_master_nodes:</span> <span class="number">2</span></span><br></pre></td></tr></table></figure>
 
-<p>2、把用户添加进docker组中</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo gpasswd -a $&#123;USER&#125; docker</span><br></pre></td></tr></table></figure>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">cluster.name:</span> <span class="string">es_cluster</span></span><br><span class="line"><span class="string">node.name:</span> <span class="string">es_2</span></span><br><span class="line"><span class="string">network.host:</span> <span class="string">peer2</span></span><br><span class="line"><span class="string">http.port:</span> <span class="number">9202</span></span><br><span class="line"><span class="string">transport.tcp.port:</span> <span class="number">9302</span></span><br><span class="line"><span class="string">discovery.zen.ping.unicast.hosts:</span> <span class="string">["peer1:9301",</span> <span class="string">"peer2:9302"</span><span class="string">,"peer3:9303"]</span></span><br><span class="line"><span class="string">discovery.zen.minimum_master_nodes:</span> <span class="number">2</span></span><br></pre></td></tr></table></figure>
 
-<p>3、重启docker</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service docker restart</span><br></pre></td></tr></table></figure>
-
-<p>4、如果普通用户执行docker命令，如果提示get …… dial unix /var/run/docker.sock权限不够，则修改/var/run/docker.sock权限<br>使用root用户执行如下命令，即可</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chmod a+rw /var/run/docker.sock</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">cluster.name:</span> <span class="string">es_cluster</span></span><br><span class="line"><span class="string">node.name:</span> <span class="string">es_3</span></span><br><span class="line"><span class="string">network.host:</span> <span class="string">peer3</span></span><br><span class="line"><span class="string">http.port:</span> <span class="number">9203</span></span><br><span class="line"><span class="string">transport.tcp.port:</span> <span class="number">9303</span></span><br><span class="line"><span class="string">discovery.zen.ping.unicast.hosts:</span> <span class="string">["peer1:9301",</span> <span class="string">"peer2:9302"</span><span class="string">,"peer3:9303"]</span></span><br><span class="line"><span class="string">discovery.zen.minimum_master_nodes:</span> <span class="number">2</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改好配置文件后依次启动三个elasticsearch服务</p>
+</li>
+<li><p>访问端口</p>
+<p><code>http://localhost:9201/_cluster/state?pretty</code></p>
+<p><img src="/Users/sxp/Documents/%E7%AC%94%E8%AE%B0/elasticsearch/image-20190428115741440.png" alt="image-20190428115741440"></p>
+</li>
+</ol>
 
             <div class="post-copyright">
     <div class="content">
-        <p>最后更新： 2019年06月22日 15:17</p>
-        <p>原始链接： <a class="post-url" href="/2019/06/22/非root用户运行docker/" title="非root用户运行docker">https://www.sxpcsj.cn/2019/06/22/非root用户运行docker/</a></p>
+        <p>最后更新： 2019年06月22日 18:32</p>
+        <p>原始链接： <a class="post-url" href="/2019/06/22/本机安装elasticsearch/" title="本机安装elasticsearch">https://www.sxpcsj.cn/2019/06/22/本机安装elasticsearch/</a></p>
         <footer>
             <a href="https://www.sxpcsj.cn">
                 <img src="/images/logo.png" alt="Felix Su">
@@ -186,7 +188,7 @@
     <div class="post-share-list" id="share-list">
         <ul class="share-icons">
           <li>
-            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.sxpcsj.cn/2019/06/22/非root用户运行docker/&title=《非root用户运行docker》 — Felix Su's Blog&pic=https://www.sxpcsj.cnimages/logo.png" data-title="微博">
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.sxpcsj.cn/2019/06/22/本机安装elasticsearch/&title=《本机安装elasticsearch》 — Felix Su's Blog&pic=https://www.sxpcsj.cnimages/logo.png" data-title="微博">
               <i class="fa fa-weibo"></i>
             </a>
           </li>
@@ -196,22 +198,22 @@
             </a>
           </li>
           <li>
-            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.sxpcsj.cn/2019/06/22/非root用户运行docker/&title=《非root用户运行docker》 — Felix Su's Blog&source=Java，服务器后端开发" data-title="QQ">
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.sxpcsj.cn/2019/06/22/本机安装elasticsearch/&title=《本机安装elasticsearch》 — Felix Su's Blog&source=Java，服务器后端开发" data-title="QQ">
               <i class="fa fa-qq"></i>
             </a>
           </li>
           <li>
-            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.sxpcsj.cn/2019/06/22/非root用户运行docker/" data-title="Facebook">
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.sxpcsj.cn/2019/06/22/本机安装elasticsearch/" data-title="Facebook">
               <i class="fa fa-facebook"></i>
             </a>
           </li>
           <li>
-            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《非root用户运行docker》 — Felix Su's Blog&url=https://www.sxpcsj.cn/2019/06/22/非root用户运行docker/&via=https://www.sxpcsj.cn" data-title="Twitter">
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《本机安装elasticsearch》 — Felix Su's Blog&url=https://www.sxpcsj.cn/2019/06/22/本机安装elasticsearch/&via=https://www.sxpcsj.cn" data-title="Twitter">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
           <li>
-            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.sxpcsj.cn/2019/06/22/非root用户运行docker/" data-title="Google+">
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.sxpcsj.cn/2019/06/22/本机安装elasticsearch/" data-title="Google+">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -221,7 +223,7 @@
 <div class="post-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;" id="wxShare-close">×</a>
     <p>扫一扫，分享到微信</p>
-    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://www.sxpcsj.cn/2019/06/22/非root用户运行docker/" alt="微信分享二维码">
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://www.sxpcsj.cn/2019/06/22/本机安装elasticsearch/" alt="微信分享二维码">
 </div>
 
 <div class="mask"></div>
@@ -230,13 +232,6 @@
         <ul class="article-footer-menu">
             
             
-  <li class="article-footer-tags">
-    <i class="fa fa-tags"></i>
-      
-    <a href="/tags/docker/" class="color2">docker</a>
-      
-  </li>
-
         </ul>
         
     </footer>
@@ -246,26 +241,16 @@
 
     <aside class="post-toc-pos post-toc-top" id="post-toc">
         <nav class="post-toc-wrap">
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#非root用户运行docker"><span class="post-toc-text">非root用户运行docker</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#本机安装elasticsearch"><span class="post-toc-text">本机安装elasticsearch</span></a></li></ol>
         </nav>
     </aside>
     
 
 <nav id="article-nav">
   
-    <a href="/2019/06/22/安装docker/" id="article-nav-newer" class="article-nav-link-wrap">
-
-      <span class="article-nav-title">
-        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
-        
-          Linux 安装 docker
-        
-      </span>
-    </a>
   
-  
-    <a href="/2019/06/22/分布式任务调度系统对比/" id="article-nav-older" class="article-nav-link-wrap">
-      <span class="article-nav-title">分布式任务调度系统对比</span>
+    <a href="/2019/06/22/git/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">git</span>
       <i class="fa fa-hand-o-right" aria-hidden="true"></i>
     </a>
   
@@ -281,7 +266,7 @@
     <div id="comments">
         <script>
             var gitment = new Gitment({
-                id: '非root用户运行docker',
+                id: '本机安装elasticsearch',
                 owner: 'FelixSuXP',
                 repo: 'FelixSu.github.io',
                 oauth: {
