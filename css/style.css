@@ -416,8 +416,8 @@ body {
 }
 #logo {
   width: 130px;
-  height: 130px;
   margin: 0 auto;
+  margin-top: 30px;
 }
 #header-menu {
   position: fixed;
@@ -1933,11 +1933,9 @@ pre .javascript .function {
   }
   #logo {
     width: 100px;
-    height: 100px;
   }
   #logo img {
     width: 100px;
-    height: 100px;
     -webkit-transform: scale(0.8);
     -moz-transform: scale(0.8);
     -ms-transform: scale(0.8);

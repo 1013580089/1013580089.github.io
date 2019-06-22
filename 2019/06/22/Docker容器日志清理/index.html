@@ -145,9 +145,9 @@
       
             
             <h1 id="Docker容器日志清理"><a href="#Docker容器日志清理" class="headerlink" title="Docker容器日志清理"></a>Docker容器日志清理</h1><h2 id="清理Docker容器日志（治标）"><a href="#清理Docker容器日志（治标）" class="headerlink" title="清理Docker容器日志（治标）"></a>清理Docker容器日志（治标）</h2><p>新建日志清理脚本clean_docker_log.sh，内容如下：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>!/bin/sh</span><br><span class="line">echo "======== start clean docker containers logs ========"</span><br><span class="line">logs=$(find /var/lib/docker/containers/ -name *-json.log)</span><br><span class="line">for log in $logs</span><br><span class="line">        do</span><br><span class="line">                echo "clean logs : $log"</span><br><span class="line">                cat /dev/null &gt; $log</span><br><span class="line">        done</span><br><span class="line">echo "======== end clean docker containers logs ========"</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/bin/sh</span></span><br><span class="line">echo "======== start clean docker containers logs ========"</span><br><span class="line">logs=$(find /var/lib/docker/containers/ -name *-json.log)</span><br><span class="line">for log in $logs</span><br><span class="line">        do</span><br><span class="line">                echo "clean logs : $log"</span><br><span class="line">                cat /dev/null &gt; $log</span><br><span class="line">        done</span><br><span class="line">echo "======== end clean docker containers logs ========"</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> chmod +x clean_docker_log.sh</span><br><span class="line"><span class="meta">#</span> ./clean_docker_log.sh</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> chmod +x clean_docker_log.sh</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> ./clean_docker_log.sh</span></span><br></pre></td></tr></table></figure>
 
 <h2 id="设置Docker容器日志大小（治本）"><a href="#设置Docker容器日志大小（治本）" class="headerlink" title="设置Docker容器日志大小（治本）"></a>设置Docker容器日志大小（治本）</h2><h3 id="设置一个容器服务的日志大小上限"><a href="#设置一个容器服务的日志大小上限" class="headerlink" title="设置一个容器服务的日志大小上限"></a>设置一个容器服务的日志大小上限</h3><p>上述方法，日志文件迟早又会涨回来。要从根本上解决问题，需要限制容器服务的日志大小上限。这个通过配置容器docker-compose的max-size选项来实现</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">nginx:</span><br><span class="line">  image: nginx:1.12.1</span><br><span class="line">  restart: always</span><br><span class="line">  logging:</span><br><span class="line">    driver: “json-file”</span><br><span class="line">    options:</span><br><span class="line">      max-size: “5g”</span><br></pre></td></tr></table></figure>
@@ -157,7 +157,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># vim /etc/docker/daemon.json</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">  &quot;log-driver&quot;:&quot;json-file&quot;,</span><br><span class="line">  &quot;log-opts&quot;: &#123;&quot;max-size&quot;:&quot;500m&quot;, &quot;max-file&quot;:&quot;3&quot;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>max-size=500m，意味着一个容器日志大小上限是500M，<br>max-file=3，意味着一个容器有三个日志，分别是id+.json、id+1.json、id+2.json。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">// 重启docker守护进程</span><br><span class="line"><span class="meta">#</span> systemctl daemon-reload</span><br><span class="line"><span class="meta">#</span> systemctl restart docker</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">// 重启docker守护进程</span><br><span class="line"><span class="meta">#</span><span class="bash"> systemctl daemon-reload</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> systemctl restart docker</span></span><br></pre></td></tr></table></figure>
 
 
             <div class="post-copyright">
@@ -256,19 +256,19 @@
 
 <nav id="article-nav">
   
-    <a href="/2019/06/22/非root用户运行docker/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/06/22/docker安装gitlab/" id="article-nav-newer" class="article-nav-link-wrap">
 
       <span class="article-nav-title">
         <i class="fa fa-hand-o-left" aria-hidden="true"></i>
         
-          非root用户运行docker
+          Docker安装gitlab
         
       </span>
     </a>
   
   
-    <a href="/2019/06/22/docker安装gitlab/" id="article-nav-older" class="article-nav-link-wrap">
-      <span class="article-nav-title">Docker安装gitlab</span>
+    <a href="/2019/06/22/docker加速器配置/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">docker 加速器</span>
       <i class="fa fa-hand-o-right" aria-hidden="true"></i>
     </a>
   
