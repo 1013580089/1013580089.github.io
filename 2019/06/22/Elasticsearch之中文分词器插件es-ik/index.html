@@ -3,21 +3,23 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
-  <title>Felix Su&#39;s Blog</title>
+  <title>Elasticsearch之中文分词器插件es-ik | Felix Su&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
     <meta name="keywords" content="Felix Su's Blog">
   
-  <meta name="description" content="Java，服务器后端开发">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Felix Su&#39;s Blog">
-<meta property="og:url" content="https://www.sxpcsj.cn/page/2/index.html">
+  <meta name="description" content="Elasticsearch之中文分词器插件es-ik1、下载 1 -下载地址https://github.com/medcl/elasticsearch-analysis-ik/releases 新建文件夹 cd your-es-root/plugins/ &amp;amp;&amp;amp; mkdir ik 解压文件到 your-es-root/plugins/ik  2 - 用 elasticsearch-">
+<meta name="keywords" content="Elasticsearch">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Elasticsearch之中文分词器插件es-ik">
+<meta property="og:url" content="https://www.sxpcsj.cn/2019/06/22/Elasticsearch之中文分词器插件es-ik/index.html">
 <meta property="og:site_name" content="Felix Su&#39;s Blog">
-<meta property="og:description" content="Java，服务器后端开发">
+<meta property="og:description" content="Elasticsearch之中文分词器插件es-ik1、下载 1 -下载地址https://github.com/medcl/elasticsearch-analysis-ik/releases 新建文件夹 cd your-es-root/plugins/ &amp;amp;&amp;amp; mkdir ik 解压文件到 your-es-root/plugins/ik  2 - 用 elasticsearch-">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-06-22T10:34:23.848Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Felix Su&#39;s Blog">
-<meta name="twitter:description" content="Java，服务器后端开发">
+<meta name="twitter:title" content="Elasticsearch之中文分词器插件es-ik">
+<meta name="twitter:description" content="Elasticsearch之中文分词器插件es-ik1、下载 1 -下载地址https://github.com/medcl/elasticsearch-analysis-ik/releases 新建文件夹 cd your-es-root/plugins/ &amp;amp;&amp;amp; mkdir ik 解压文件到 your-es-root/plugins/ik  2 - 用 elasticsearch-">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -106,211 +108,180 @@
     </div>
 </header>
       <div class="outer">
-        <section id="main" class="body-wrap">
-  
-    <article id="post-docker加速器配置" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main" class="body-wrap"><article id="post-Elasticsearch之中文分词器插件es-ik" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/06/22/docker加速器配置/"  >docker 加速器</a>
+    <h1 class="post-title" itemprop="name">
+      Elasticsearch之中文分词器插件es-ik
     </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+              <li>
+                  <i class="fa fa-book"></i>
+                  
+                      <a href="/categories/Elasticsearch/">Elasticsearch</a>
+                  
+              </li>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2019-06-22
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
   
 
           
-              <span class="header-cate">
-                <i class="fa fa-map-marker"></i>
-                  
-                  <a href="/categories/docker/">docker</a>
-                  
-              </span>
-          
       </header>
     
-    <div class="article-entry " itemprop="articleBody">
+    <div class="article-entry post-content" itemprop="articleBody">
       
-        <div class="article-img">
-            <a href="/2019/06/22/docker加速器配置/" >
-                
-                <img src="https://www.sxpcsj.cn/images/banner.jpg" alt="docker 加速器" title="docker 加速器">
-                
+            
+            <h1 id="Elasticsearch之中文分词器插件es-ik"><a href="#Elasticsearch之中文分词器插件es-ik" class="headerlink" title="Elasticsearch之中文分词器插件es-ik"></a>Elasticsearch之中文分词器插件es-ik</h1><h2 id="1、下载"><a href="#1、下载" class="headerlink" title="1、下载"></a>1、下载</h2><ul>
+<li><p>1 -下载地址<code>https://github.com/medcl/elasticsearch-analysis-ik/releases</code></p>
+<p>新建文件夹 <code>cd your-es-root/plugins/ &amp;&amp; mkdir ik</code></p>
+<p>解压文件到 <code>your-es-root/plugins/ik</code></p>
+</li>
+<li><p>2 - 用 elasticsearch-plugin 安装</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./bin/elasticsearch-plugin install https://github.com/medcl/elasticsearch-analysis-ik/releases/download/v6.2.4/elasticsearch-analysis-ik-6.2.4.zip</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="2、重启服务"><a href="#2、重启服务" class="headerlink" title="2、重启服务"></a>2、重启服务</h2>
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2019年06月22日 18:34</p>
+        <p>原始链接： <a class="post-url" href="/2019/06/22/Elasticsearch之中文分词器插件es-ik/" title="Elasticsearch之中文分词器插件es-ik">https://www.sxpcsj.cn/2019/06/22/Elasticsearch之中文分词器插件es-ik/</a></p>
+        <footer>
+            <a href="https://www.sxpcsj.cn">
+                <img src="/images/logo.png" alt="Felix Su">
+                Felix Su
             </a>
-        </div>
-        <div class="article-feed">
-            <p>
-                docker 加速器常用的加速器服务：
-Docker 官方的中国镜像加速器：从2017年6月9日起，Docker 官方提供了在中国的加速器，以解决墙的问题。不用注册，直接使用加速器地址：https://registry.docker-cn.com 即可。
-中国科技大学的镜像加速器：中科大的加速器不用注册，直接使用地址 https://docker.mirrors.ustc...
-            </p>
-        </div>
+        </footer>
+    </div>
+</div>
+
       
+        
+            
+
         
     </div>
     <footer class="article-footer">
         
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.sxpcsj.cn/2019/06/22/Elasticsearch之中文分词器插件es-ik/&title=《Elasticsearch之中文分词器插件es-ik》 — Felix Su's Blog&pic=https://www.sxpcsj.cnimages/logo.png" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.sxpcsj.cn/2019/06/22/Elasticsearch之中文分词器插件es-ik/&title=《Elasticsearch之中文分词器插件es-ik》 — Felix Su's Blog&source=Java，服务器后端开发" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.sxpcsj.cn/2019/06/22/Elasticsearch之中文分词器插件es-ik/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Elasticsearch之中文分词器插件es-ik》 — Felix Su's Blog&url=https://www.sxpcsj.cn/2019/06/22/Elasticsearch之中文分词器插件es-ik/&via=https://www.sxpcsj.cn" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.sxpcsj.cn/2019/06/22/Elasticsearch之中文分词器插件es-ik/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://www.sxpcsj.cn/2019/06/22/Elasticsearch之中文分词器插件es-ik/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
         <ul class="article-footer-menu">
-            
-                <li><i class="fa fa-calendar"></i>2019-06-22</li>
             
             
   <li class="article-footer-tags">
     <i class="fa fa-tags"></i>
       
-    <a href="/tags/docker/" class="color2">docker</a>
+    <a href="/tags/Elasticsearch/" class="color4">Elasticsearch</a>
       
   </li>
 
         </ul>
-        
-            <a href="/2019/06/22/docker加速器配置/#more" class="article-more-link" >more&gt;&gt;</a>
         
     </footer>
   </div>
 </article>
 
 
-  
-    <article id="post-Docker容器日志清理" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Elasticsearch之中文分词器插件es-ik"><span class="post-toc-text">Elasticsearch之中文分词器插件es-ik</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1、下载"><span class="post-toc-text">1、下载</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2、重启服务"><span class="post-toc-text">2、重启服务</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
     
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/06/22/Docker容器日志清理/"  >Docker安装gitlab</a>
-    </h1>
-  
 
-          
-              <span class="header-cate">
-                <i class="fa fa-map-marker"></i>
-                  
-                  <a href="/categories/docker/">docker</a>
-                  
-              </span>
-          
-      </header>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/06/22/elasticsearch-head插件/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">elasticsearch-head插件</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
     
-    <div class="article-entry " itemprop="articleBody">
-      
-        <div class="article-img">
-            <a href="/2019/06/22/Docker容器日志清理/" >
-                
-                <img src="https://www.sxpcsj.cn/images/banner.jpg" alt="Docker安装gitlab" title="Docker安装gitlab">
-                
-            </a>
-        </div>
-        <div class="article-feed">
-            <p>
-                Docker容器日志清理清理Docker容器日志（治标）新建日志清理脚本clean_docker_log.sh，内容如下：
-123456789#!/bin/shecho "======== start clean docker containers logs ========"logs=$(find /var/lib/docker/containers/ -name *-...
-            </p>
-        </div>
-      
-        
+        <!-- <link rel="stylesheet" href="//unpkg.com/gitment/style/default.css">
+    <script src="//unpkg.com/gitment/dist/gitment.browser.js"></script> -->
+    <link rel="stylesheet" href="/gitment/gitment.css">
+    <script src="/gitment/gitment.js"></script>
+    <div id="comments">
+        <script>
+            var gitment = new Gitment({
+                id: 'Elasticsearch之中文分词器插件es-ik',
+                owner: 'FelixSuXP',
+                repo: 'FelixSu.github.io',
+                oauth: {
+                    client_id: 'e84c9f7cfbe063914eb0',
+                    client_secret: 'f144df6b87162ac2de3a3fc6087c251a1a474c3a',
+                },
+            })
+            gitment.render('comments')
+        </script>
     </div>
-    <footer class="article-footer">
-        
-        <ul class="article-footer-menu">
-            
-                <li><i class="fa fa-calendar"></i>2019-06-22</li>
-            
-            
-  <li class="article-footer-tags">
-    <i class="fa fa-tags"></i>
-      
-    <a href="/tags/docker/" class="color2">docker</a>
-      
-  </li>
 
-        </ul>
-        
-            <a href="/2019/06/22/Docker容器日志清理/#more" class="article-more-link" >more&gt;&gt;</a>
-        
-    </footer>
-  </div>
-</article>
-
-
-  
-    <article id="post-任务调度的 Java 实现方法与比较" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
     
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/06/22/任务调度的 Java 实现方法与比较/"  >任务调度的 Java 实现方法与比较</a>
-    </h1>
-  
-
-          
-              <span class="header-cate">
-                <i class="fa fa-map-marker"></i>
-                  
-                  <a href="/categories/分布式任务调度系统/">分布式任务调度系统</a>
-                  
-              </span>
-          
-      </header>
-    
-    <div class="article-entry " itemprop="articleBody">
-      
-        <div class="article-img">
-            <a href="/2019/06/22/任务调度的 Java 实现方法与比较/" >
-                
-                <img src="https://www.sxpcsj.cn/images/banner.jpg" alt="任务调度的 Java 实现方法与比较" title="任务调度的 Java 实现方法与比较">
-                
-            </a>
-        </div>
-        <div class="article-feed">
-            <p>
-                #任务调度的 Java 实现方法与比较
-前言任务调度是指基于给定时间点，给定时间间隔或者给定执行次数自动执行任务。本文由浅入深介绍四种任务调度的 Java 实现：
-
-Timer
-ScheduledExecutor
-开源工具包 Quartz
-开源工具包 JCronTab
-
-此外，为结合实现复杂的任务调度，本文还将介绍 Calendar 的一些使用方法。
-Timer相信大家都...
-            </p>
-        </div>
-      
-        
-    </div>
-    <footer class="article-footer">
-        
-        <ul class="article-footer-menu">
-            
-                <li><i class="fa fa-calendar"></i>2019-06-22</li>
-            
-            
-  <li class="article-footer-tags">
-    <i class="fa fa-tags"></i>
-      
-    <a href="/tags/分布式任务调度系统/" class="color5">分布式任务调度系统</a>
-      
-  </li>
-
-        </ul>
-        
-            <a href="/2019/06/22/任务调度的 Java 实现方法与比较/#more" class="article-more-link" >more&gt;&gt;</a>
-        
-    </footer>
-  </div>
-</article>
-
-
-  
-
-
-  <nav id="page-nav">
-    <a class="extend prev" rel="prev" href="/"><< Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
-  </nav>
 </section>
         
       </div>
@@ -342,7 +313,7 @@ Timer相信大家都...
   var mihoConfig = {
       root: "https://www.sxpcsj.cn",
       animate: true,
-      isHome: true,
+      isHome: false,
       share: true,
       reward: 0
   }
@@ -440,6 +411,11 @@ Timer相信大家都...
   <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
   <script src="/js/animate.js"></script>
 
+
+  <script src="/js/pop-img.js"></script>
+  <script>
+     $(".article-entry p img").popImg();
+  </script>
 
   </div>
 </body>
