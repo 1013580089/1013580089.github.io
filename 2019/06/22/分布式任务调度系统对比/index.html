@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>分布式任务调度系统对比 | Felix&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="Felix's Blog">
+  
+  <meta name="description" content="#分布式任务调度系统对比 项目背景及社区力量X-Job　：　大众点评公司下员工许雪里、贡献者 3人;　github有2470star、1015fork　|　QQ讨论群6个　|　有登记在使用的超过40家公司　|　文档齐全 E-Job　：　当当网开源，贡献者17人;　github有2524star、1015fork　|　QQ讨论群１个、源码讨论群１个　|　有登记在使用的超过50家公司　|　文档齐全　｜">
+<meta name="keywords" content="分布式任务调度系统">
+<meta property="og:type" content="article">
+<meta property="og:title" content="分布式任务调度系统对比">
+<meta property="og:url" content="https://www.sxpcsj.cn/2019/06/22/分布式任务调度系统对比/index.html">
+<meta property="og:site_name" content="Felix&#39;s Blog">
+<meta property="og:description" content="#分布式任务调度系统对比 项目背景及社区力量X-Job　：　大众点评公司下员工许雪里、贡献者 3人;　github有2470star、1015fork　|　QQ讨论群6个　|　有登记在使用的超过40家公司　|　文档齐全 E-Job　：　当当网开源，贡献者17人;　github有2524star、1015fork　|　QQ讨论群１个、源码讨论群１个　|　有登记在使用的超过50家公司　|　文档齐全　｜">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://www.sxpcsj.cn/Users/sxp/Documents/%E7%AC%94%E8%AE%B0/%E5%88%86%E5%B8%83%E5%BC%8F%E4%BB%BB%E5%8A%A1%E8%B0%83%E5%BA%A6%E7%B3%BB%E7%BB%9F/eROnCDuL3J0W0364.png!thumbnail.png">
+<meta property="og:updated_time" content="2019-06-22T07:23:03.232Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="分布式任务调度系统对比">
+<meta name="twitter:description" content="#分布式任务调度系统对比 项目背景及社区力量X-Job　：　大众点评公司下员工许雪里、贡献者 3人;　github有2470star、1015fork　|　QQ讨论群6个　|　有登记在使用的超过40家公司　|　文档齐全 E-Job　：　当当网开源，贡献者17人;　github有2524star、1015fork　|　QQ讨论群１个、源码讨论群１个　|　有登记在使用的超过50家公司　|　文档齐全　｜">
+<meta name="twitter:image" content="https://www.sxpcsj.cn/Users/sxp/Documents/%E7%AC%94%E8%AE%B0/%E5%88%86%E5%B8%83%E5%BC%8F%E4%BB%BB%E5%8A%A1%E8%B0%83%E5%BA%A6%E7%B3%BB%E7%BB%9F/eROnCDuL3J0W0364.png!thumbnail.png">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/pace.min.js"></script>
+  
+
+  
+  
+  <div style="display: none;">
+    <script src="//s22.cnzz.com/z_stat.php?id=1277741362&web_id=1277741362" language="JavaScript"></script>
+  </div>
+
+
+</head>
+</html>
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">Felix&#39;s Blog</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a  href="/">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a  href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>Archives</span>
+                    </a>
+                    
+                    <a  href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        Felix&#39;s Blog
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        Java，服务器后端开发
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="F" target="_blank" href="//www.sxpcsj.cn">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="//github.com/1013580089">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-分布式任务调度系统对比" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      分布式任务调度系统对比
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+              <li>
+                  <i class="fa fa-book"></i>
+                  
+                      <a href="/categories/分布式任务调度系统/">分布式任务调度系统</a>
+                  
+              </li>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2019-06-22
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <p>#分布式任务调度系统对比</p>
+<h2 id="项目背景及社区力量"><a href="#项目背景及社区力量" class="headerlink" title="项目背景及社区力量"></a>项目背景及社区力量</h2><p><em>X-Job</em>　：　大众点评公司下员工许雪里、贡献者 3人;　github有2470star、1015fork　|　QQ讨论群6个　|　有登记在使用的超过40家公司　|　文档齐全</p>
+<p><em>E-Job</em>　：　当当网开源，贡献者17人;　github有2524star、1015fork　|　QQ讨论群１个、源码讨论群１个　|　有登记在使用的超过50家公司　|　文档齐全　｜　有明确的发展计划</p>
+<h2 id="支持集群部署"><a href="#支持集群部署" class="headerlink" title="支持集群部署"></a>支持集群部署</h2><p><em>X-Job</em>　：　集群部署唯一要求为：保证每个集群节点配置（db和登陆账号等）保持一致。调度中心通过db配置区分不同集群。</p>
+<blockquote>
+<p>  执行器支持集群部署，提升调度系统可用性，同时提升任务处理能力。集群部署唯一要求为：保证集群中每个执行器的配置项 “xxl.job.admin.addresses/调度中心地址” 保持一致，执行器根据该配置进行执行器自动注册等操作。</p>
+</blockquote>
+<p><em>E-Job</em>　：　重写Quartz基于数据库的分布式功能，改用Zookeeper实现注册中心</p>
+<blockquote>
+<p>  作业注册中心： 基于Zookeeper和其客户端Curator实现的全局作业注册控制中心。用于注册，控制和协调分布式作业执行。</p>
+</blockquote>
+<h2 id="多节点部署时任务不能重复执行"><a href="#多节点部署时任务不能重复执行" class="headerlink" title="多节点部署时任务不能重复执行"></a>多节点部署时任务不能重复执行</h2><p><em>X-Job</em>　：　使用Quartz基于数据库的分布式功能</p>
+<p><em>E-Job</em>  ：　将任务拆分为n个任务项后，各个服务器分别执行各自分配到的任务项。一旦有新的服务器加入集群，或现有服务器下线，elastic-job将在保留本次任务执行不变的情况下，下次任务开始前触发任务重分片。</p>
+<h2 id="日志可追溯"><a href="#日志可追溯" class="headerlink" title="日志可追溯"></a>日志可追溯</h2><p><em>X-Job</em>　：　支持，有日志查询界面</p>
+<p><em>E-Job</em>　：　可通过事件订阅的方式处理调度过程的重要事件，用于查询、统计和监控。Elastic-Job目前提供了基于关系型数据库两种事件订阅方式记录事件。</p>
+<h2 id="监控告警"><a href="#监控告警" class="headerlink" title="监控告警"></a>监控告警</h2><p><em>X-Job</em>　：　调度失败时，将会触发失败报警，如发送报警邮件。</p>
+<blockquote>
+<p>  任务调度失败时邮件通知的邮箱地址，支持配置多邮箱地址，配置多个邮箱地址时用逗号分隔</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<p><em>E-Job</em>　：　通过事件订阅方式可自行实现</p>
+<blockquote>
+<p>  作业运行状态监控、监听作业服务器存活、监听近期数据处理成功、数据流类型作业（可通过监听近期数据处理成功数判断作业流量是否正常,如果小于作业正常处理的阀值，可选择报警。）、监听近期数据处理失败（可通过监听近期数据处理失败数判断作业处理结果，如果大于0，可选择报警。）</p>
+</blockquote>
+<h2 id="弹性扩容缩容"><a href="#弹性扩容缩容" class="headerlink" title="弹性扩容缩容"></a>弹性扩容缩容</h2><p><em>X-Job</em>　：　使用Quartz基于数据库的分布式功能，服务器超出一定数量会给数据库造成一定的压力</p>
+<p><em>E-Job</em>　：　通过zk实现各服务的注册、控制及协调</p>
+<h2 id="支持并行调度"><a href="#支持并行调度" class="headerlink" title="支持并行调度"></a>支持并行调度</h2><p><em>X-Job</em>　：　调度系统多线程（默认10个线程）触发调度运行，确保调度精确执行，不被堵塞。</p>
+<p><em>E-Job</em>　：　采用任务分片方式实现。将一个任务拆分为n个独立的任务项，由分布式的服务器并行执行各自分配到的分片项。</p>
+<h2 id="高可用策略"><a href="#高可用策略" class="headerlink" title="高可用策略"></a>高可用策略</h2><p><em>X-Job</em>　：　“调度中心”通过DB锁保证集群分布式调度的一致性, 一次任务调度只会触发一次执行；</p>
+<p><em>E-Job</em>　：　调度器的高可用是通过运行几个指向同一个ZooKeeper集群的Elastic-Job-Cloud-Scheduler实例来实现的。ZooKeeper用于在当前主Elastic-Job-Cloud-Scheduler实例失败的情况下执行领导者选举。通过至少两个调度器实例来构成集群，集群中只有一个调度器实例提供服务，其他实例处于”待命”状态。当该实例失败时，集群会选举剩余实例中的一个来继续提供服务。</p>
+<h2 id="失败处理策略"><a href="#失败处理策略" class="headerlink" title="失败处理策略"></a>失败处理策略</h2><p><em>X-Job</em>　：　调度失败时的处理策略，策略包括：失败告警（默认）、失败重试；</p>
+<p><em>E-Job</em>　：　弹性扩容缩容在下次作业运行前重分片，但本次作业执行的过程中，下线的服务器所分配的作业将不会重新被分配。失效转移功能可以在本次作业运行中用空闲服务器抓取孤儿作业分片执行。同样失效转移功能也会牺牲部分性能。</p>
+<h2 id="动态分片策略"><a href="#动态分片策略" class="headerlink" title="动态分片策略"></a>动态分片策略</h2><p><em>X-Job</em>　：　分片广播任务以执行器为维度进行分片，支持动态扩容执行器集群从而动态增加分片数量，协同进行业务处理；在进行大数据量业务操作时可显著提升任务处理能力和速度。</p>
+<blockquote>
+<p>  执行器集群部署时，任务路由策略选择”分片广播”情况下，一次任务调度将会广播触发对应集群中所有执行器执行一次任务，同时传递分片参数；可根据分片参数开发分片任务；</p>
+</blockquote>
+<p><em>E-Job</em>　：　支持多种分片策略，可自定义分片策略</p>
+<blockquote>
+<p>  默认包含三种分片策略： 基于平均分配算法的分片策略、 作业名的哈希值奇偶数决定IP升降序算法的分片策略、根据作业名的哈希值对Job实例列表进行轮转的分片策略，支持自定义分片策略</p>
+</blockquote>
+<blockquote>
+<p>  elastic-job的分片是通过zookeeper来实现的。分片的分片由主节点分配，如下三种情况都会触发主节点上的分片算法执行：</p>
+</blockquote>
+<blockquote>
+<p>  a、新的Job实例加入集群</p>
+</blockquote>
+<blockquote>
+<p>  b、现有的Job实例下线（如果下线的是leader节点，那么先选举然后触发分片算法的执行）</p>
+</blockquote>
+<blockquote>
+<p>  c、主节点选举”</p>
+</blockquote>
+<h2 id="和quartz框架对比"><a href="#和quartz框架对比" class="headerlink" title="和quartz框架对比"></a>和quartz框架对比</h2><ul>
+<li>调用API的的方式操作任务，不人性化；</li>
+<li>需要持久化业务QuartzJobBean到底层数据表中，系统侵入性相当严重。</li>
+<li>调度逻辑和QuartzJobBean耦合在同一个项目中，这将导致一个问题，在调度任务数量逐渐增多，同时调度任务逻辑逐渐加重的情况加，此时调度系统的性能将大大受限于业务；</li>
+<li>Quartz关注点在于定时任务而非数据，并无一套根据数据处理而定制化的流程。虽然Quartz可以基于数据库实现作业的高可用，但缺少分布式并行调度的功能。</li>
+</ul>
+<h1 id="综合对比"><a href="#综合对比" class="headerlink" title="综合对比"></a>综合对比</h1><p>​         <img src="/Users/sxp/Documents/%E7%AC%94%E8%AE%B0/%E5%88%86%E5%B8%83%E5%BC%8F%E4%BB%BB%E5%8A%A1%E8%B0%83%E5%BA%A6%E7%B3%BB%E7%BB%9F/eROnCDuL3J0W0364.png!thumbnail.png" alt="img">       </p>
+<h1 id="总结和结论"><a href="#总结和结论" class="headerlink" title="总结和结论"></a>总结和结论</h1><p>共同点： E-Job和X-job都有广泛的用户基础和完整的技术文档，都能满足定时任务的基本功能需求。</p>
+<p>不同点</p>
+<p>X-Job 侧重的业务实现的简单和管理的方便，学习成本简单，失败策略和路由策略丰富。推荐使用在“用户基数相对少，服务器数量在一定范围内”的情景下使用</p>
+<p>E-Job 关注的是数据，增加了弹性扩容和数据分片的思路，以便于更大限度的利用分布式服务器的资源。但是学习成本相对高些，推荐在“数据量庞大，且部署服务器数量较多”时使用</p>
+
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2019年06月22日 15:23</p>
+        <p>原始链接： <a class="post-url" href="/2019/06/22/分布式任务调度系统对比/" title="分布式任务调度系统对比">https://www.sxpcsj.cn/2019/06/22/分布式任务调度系统对比/</a></p>
+        <footer>
+            <a href="https://www.sxpcsj.cn">
+                <img src="/images/logo.png" alt="Felix">
+                Felix
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.sxpcsj.cn/2019/06/22/分布式任务调度系统对比/&title=《分布式任务调度系统对比》 — Felix's Blog&pic=https://www.sxpcsj.cnimages/logo.png" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.sxpcsj.cn/2019/06/22/分布式任务调度系统对比/&title=《分布式任务调度系统对比》 — Felix's Blog&source=Java，服务器后端开发" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.sxpcsj.cn/2019/06/22/分布式任务调度系统对比/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《分布式任务调度系统对比》 — Felix's Blog&url=https://www.sxpcsj.cn/2019/06/22/分布式任务调度系统对比/&via=https://www.sxpcsj.cn" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.sxpcsj.cn/2019/06/22/分布式任务调度系统对比/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://www.sxpcsj.cn/2019/06/22/分布式任务调度系统对比/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/分布式任务调度系统/" class="color5">分布式任务调度系统</a>
+      
+  </li>
+
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#项目背景及社区力量"><span class="post-toc-text">项目背景及社区力量</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#支持集群部署"><span class="post-toc-text">支持集群部署</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#多节点部署时任务不能重复执行"><span class="post-toc-text">多节点部署时任务不能重复执行</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#日志可追溯"><span class="post-toc-text">日志可追溯</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#监控告警"><span class="post-toc-text">监控告警</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#弹性扩容缩容"><span class="post-toc-text">弹性扩容缩容</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#支持并行调度"><span class="post-toc-text">支持并行调度</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#高可用策略"><span class="post-toc-text">高可用策略</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#失败处理策略"><span class="post-toc-text">失败处理策略</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#动态分片策略"><span class="post-toc-text">动态分片策略</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#和quartz框架对比"><span class="post-toc-text">和quartz框架对比</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#综合对比"><span class="post-toc-text">综合对比</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#总结和结论"><span class="post-toc-text">总结和结论</span></a>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+    <a href="/2019/06/22/安装docker/" id="article-nav-newer" class="article-nav-link-wrap">
+
+      <span class="article-nav-title">
+        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
+        
+          Linux 安装 docker
+        
+      </span>
+    </a>
+  
+  
+    <a href="/2019/06/22/任务调度的 Java 实现方法与比较/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">任务调度的 Java 实现方法与比较</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+        <link rel="stylesheet" href="//unpkg.com/gitment/style/default.css">
+    <script src="//unpkg.com/gitment/dist/gitment.browser.js"></script>
+    <div id="comments">
+        <script>
+            var gitment = new Gitment({
+                owner: '1013580089',
+                repo: '1013580089.github.io',
+                oauth: {
+                    client_id: 'e84c9f7cfbe063914eb0',
+                    client_secret: 'f144df6b87162ac2de3a3fc6087c251a1a474c3a',
+                },
+            })
+            gitment.render('comments')
+        </script>
+    </div>
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="https://www.sxpcsj.cn/" target="_blank">Felix's Blog</a>
+      &copy; 2019 Felix<br>
+      </p>
+    </div>
+  </div>
+</footer>
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "https://www.sxpcsj.cn",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 0
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            <a class="category-link" href="/categories/docker/">docker</a><a class="category-link" href="/categories/分布式任务调度系统/">分布式任务调度系统</a>
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/tags/docker/" style="font-size: 20px;">docker</a> <a href="/tags/任务调度的-Java-实现方法与比较/" style="font-size: 10px;">任务调度的 Java 实现方法与比较</a> <a href="/tags/分布式任务调度系统/" style="font-size: 10px;">分布式任务调度系统</a>
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a  href="/">
+                    <i class="fa fa-home"></i><span>Home</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/archives">
+                    <i class="fa fa-archive"></i><span>Archives</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/about">
+                    <i class="fa fa-user"></i><span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/tags/docker/" style="font-size: 20px;">docker</a> <a href="/tags/任务调度的-Java-实现方法与比较/" style="font-size: 10px;">任务调度的 Java 实现方法与比较</a> <a href="/tags/分布式任务调度系统/" style="font-size: 10px;">分布式任务调度系统</a>
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/js/search.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/js/animate.js"></script>
+
+
+  <script src="/js/pop-img.js"></script>
+  <script>
+     $(".article-entry p img").popImg();
+  </script>
+
+  </div>
+</body>
+</html>
