@@ -79,7 +79,20 @@ Docker 官方的中国镜像加速器：从2017年6月9日起，Docker 官方提
 <![endif]-->
 
 <body>
-    
+    <header class="main-header"  style="background-image:url(/img/banner.png);background-size:100%"  >
+    <div class="main-header-box">
+        <!-- <a class="header-avatar" href="/" title='Felix Su'>
+            <img src="/img/IMG_4611.jpg" alt="logo头像" class="img-responsive center-block">
+        </a> -->
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+              <!--   <img src="/img/branding.png" alt="Felix Su' Blog" class="img-responsive center-block"> -->
+            
+    	</div>
+    </div>
+</header>
+
     <nav class="main-navigation">
     <div class="container">
         <div class="row">
@@ -94,19 +107,19 @@ Docker 官方的中国镜像加速器：从2017年6月9日起，Docker 官方提
                     <ul class="menu">
                         
                             <li role="presentation" class="text-center">
-                                <a href="/"><i class="fa fa-home"></i>Felix Su</a>
+                                <a href="/"><i class="fa fa-home"></i>&nbsp;&nbsp;首页</a>
                             </li>
                         
                             <li role="presentation" class="text-center">
-                                <a href="/categories"><i class="fa fa-list"></i>分类</a>
+                                <a href="/categories"><i class="fa fa-list"></i>&nbsp;&nbsp;分类</a>
                             </li>
                         
                             <li role="presentation" class="text-center">
-                                <a href="/about"><i class="fa fa-user"></i>关于我</a>
+                                <a href="/archives"><i class="fa fa-archive"></i>&nbsp;&nbsp;归档</a>
                             </li>
                         
                             <li role="presentation" class="text-center">
-                                <a href="/archives"><i class="fa fa-archive"></i>归档</a>
+                                <a href="/about"><i class="fa fa-user"></i>&nbsp;&nbsp;关于我</a>
                             </li>
                         
                     </ul>
@@ -116,11 +129,6 @@ Docker 官方的中国镜像加速器：从2017年6月9日起，Docker 官方提
     </div>
 </nav>
 
-<a href="http://github.com/eacdy">
-    <img style="position: absolute; top: 0; right: 0; border: 0;"
-        src="/img/forkme.png"
-        alt="Fork me on GitHub">
-</a>
 
     <section class="content-wrap">
         <div class="container">
@@ -228,7 +236,7 @@ Docker 官方的中国镜像加速器：从2017年6月9日起，Docker 官方提
             </div>
             <div>
                 
-                    转载声明：本博客由 Felix Su 创作，采用 <a href="https://creativecommons.org/licenses/by-nc-nd/3.0/" target="_blank"> CC BY 3.0 CN </a> 许可协议。可自由转载、引用，但需署名作者且注明文章出处。如转载至微信公众号，请在文末添加作者公众号二维码。
+                    转载声明：本博客由 Felix Su 创作。可自由转载、引用，但需署名作者且注明文章出处。
                 
             </div>
             <div>
@@ -236,22 +244,22 @@ Docker 官方的中国镜像加速器：从2017年6月9日起，Docker 官方提
             </div>
         </div>
         <div class="col-sm-2">
-            <img src="/icons/wx.jpg" width=100%/>
+            <img src="/img/IMG_4611.jpg" width=100%/>
         </div>
     </div>
 </article>
 
 <div class="article-nav prev-next-wrap clearfix">
     
-        <a href="/2019/06/22/Docker容器日志清理/" class="pre-post btn btn-default" title='Docker安装gitlab'>
+        <a href="/2019/06/22/docker安装gitlab/" class="pre-post btn btn-default" title='Docker安装gitlab'>
             <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
             <span class="hidden-xs">Docker安装gitlab</span>
         </a>
     
     
-        <a href="/2019/06/22/docker安装gitlab/" class="next-post btn btn-default" title='Docker安装gitlab'>
+        <a href="/2019/06/22/修改Docker的默认镜像存储位置/" class="next-post btn btn-default" title='修改Docker的默认镜像存储位置'>
             <span class="hidden-lg">下一篇</span>
-            <span class="hidden-xs">Docker安装gitlab</span><i class="fa fa-angle-right fa-fw"></i>
+            <span class="hidden-xs">修改Docker的默认镜像存储位置</span><i class="fa fa-angle-right fa-fw"></i>
         </a>
     
 </div>
@@ -286,138 +294,14 @@ Docker 官方的中国镜像加速器：从2017年6月9日起，Docker 官方提
 
                 </main>
                 
-                    
-    <aside class="col-md-4 sidebar">
-        
-        
+                    <aside id="article-toc" role="navigation" class="col-md-4">
     <div class="widget">
-        <h3 class="title">搜索</h3>
-        <div id="search-form">
-            <div id="result-mask" class="hide"></div>
-            <div class="search-area">
-                
-                    <input id="search-key" type="search" autocomplete="off" placeholder="搜点什么呢？">
-                    <button type="button" class="search-form-submit" id="search-local">站内搜索</button>
-                
-                
-            </div>
-            <div id="result-wrap" class="hide">
-                <div id="search-result"></div>
-            </div>
-            <div class="hide">
-                <template id="search-tpl">
-                    <div class="item">
-                        <a href="/{path}" title="{title}">
-                            <div class="title">{title}</div>
-                            <div class="content">{content}</div>
-                        </a>
-                    </div>
-                </template>
-            </div>
-        </div>
-    </div>
-
+        <h3 class="title">文章目录</h3>
         
-        
-    <div class="widget">
-        <h3 class="title">网站公告</h3>
-        <div class="notification">
-            <p>
-  <b>笔者微信</b>：jumping_me，欢迎加我<br/>
-  <b>公众号</b>：请扫描我的头像<br/>
-</p>
-        </div>
-    </div>
-
-        
-        
-        <div class="widget">
-            <div class="about-me">
-                <img src="/icons/wx.jpg" alt="Felix Su's Blog">
-                <h2>Feilx Su</h2>
-                <p>《Spring Cloud与Docker微服务架构实战》作者<br/></p>
-            </div>
-        </div>
-
-
-
-
-        
-        
-    <div class="widget">
-      <h3 class="title">社交</h3> 
-        <div class="content social">
-            
-	            <a href="//github.com/eacdy" rel="external nofollow" title="GitHub" target="_blank">
-			    	<i class="github fa fa-github"></i>
-			    </a>
-            
-	            <a href="//gitee.com/itmuch" rel="external nofollow" title="Git@OSC" target="_blank">
-			    	<i class="git fa fa-git"></i>
-			    </a>
-            
-	            <a href="mailto:eacdy0000@126.com" rel="external nofollow" title="邮箱" target="_blank">
-			    	<i class="envelope-o fa fa-envelope-o"></i>
-			    </a>
-            
-	            <a href="/atom.xml" rel="external nofollow" title="RSS" target="_blank">
-			    	<i class="feed fa fa-feed"></i>
-			    </a>
-            
-        </div>
-    </div>
-
-
-        
-        
-    <div class="widget">
-        <h3 class="title">分类</h3>
-        <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/docker/"><i class="fa" aria-hidden="true">docker</i></a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/elasticsearch/"><i class="fa" aria-hidden="true">elasticsearch</i></a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/"><i class="fa" aria-hidden="true">git</i></a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/分布式任务调度系统/"><i class="fa" aria-hidden="true">分布式任务调度系统</i></a><span class="category-list-count">2</span></li></ul>
-    </div>
-
-
-        
-        
-    <div class="widget">
-        <h3 class="title">归档</h3>
-        <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/"><i class="fa" aria-hidden="true">2019年06月</i></a><span class="archive-list-count">13</span></li></ul>
-    </div>
-
-
-        
-        
-  <div class="widget">
-    <h3 class="title">标签云</h3>
-    <div class="content tag-cloud">
-        
-            <a href="/tags/docker/" style="font-size: 20px;">docker</a> <a href="/tags/elasticsearch/" style="font-size: 16.67px;">elasticsearch</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/分布式任务调度系统/" style="font-size: 13.33px;">分布式任务调度系统</a>
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#docker-加速器"><span class="toc-text">docker 加速器</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#常用的加速器服务："><span class="toc-text">常用的加速器服务：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Ubuntu-16-04-或-CentOS-7-配置加速器（或其它使用-Systemd-的系统）"><span class="toc-text">Ubuntu 16.04 或 CentOS 7 配置加速器（或其它使用 Systemd 的系统）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Ubuntu-14-04-配置加速器（或其它使用-Upstart-的系统）"><span class="toc-text">Ubuntu 14.04 配置加速器（或其它使用 Upstart 的系统）</span></a></li></ol></li></ol>
         
     </div>
-  </div>
-
-
-        
-        
-    <div class="widget">
-        <h3 class="title">友链</h3>
-        <div class="content friends-link">
-        
-            <a href="http://blog.didispace.com/" class="fa" target="_blank">程序猿DD|翟永超</a>
-        
-            <a href="http://www.bysocket.com/" class="fa" target="_blank">泥瓦匠的博客</a>
-        
-            <a href="http://edisonxu.org/" class="fa" target="_blank">EdisonXu&#39;s Blog</a>
-        
-            <a href="http://blog.720ui.com/" class="fa" target="_blank">梁桂钊的博客</a>
-        
-            <a href="http://cxytiandi.com/" class="fa" target="_blank">猿天地</a>
-        
-        </div>
-    </div>
-
-
-        
-    </aside>
+</aside>
 
                 
             </div>
@@ -458,12 +342,6 @@ Docker 官方的中国镜像加速器：从2017年6月9日起，Docker 官方提
             </div>
             <div class="col-sm-12">
                 <span>Copyright &copy; 2019
-                </span> |
-                <span>
-                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
-                </span> |
-                <span>
-                    Theme by <a href="//github.com/itmuch/hexo-theme-itmuch.git" class="copyright-links" target="_blank" rel="nofollow">ITMuch</a>
                 </span>
             </div>
         </div>

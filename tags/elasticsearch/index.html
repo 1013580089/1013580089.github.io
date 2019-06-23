@@ -75,7 +75,20 @@
 <![endif]-->
 
 <body>
-    
+    <header class="main-header"  style="background-image:url(/img/banner.png);background-size:100%"  >
+    <div class="main-header-box">
+        <!-- <a class="header-avatar" href="/" title='Felix Su'>
+            <img src="/img/IMG_4611.jpg" alt="logo头像" class="img-responsive center-block">
+        </a> -->
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+              <!--   <img src="/img/branding.png" alt="Felix Su' Blog" class="img-responsive center-block"> -->
+            
+    	</div>
+    </div>
+</header>
+
     <nav class="main-navigation">
     <div class="container">
         <div class="row">
@@ -90,19 +103,19 @@
                     <ul class="menu">
                         
                             <li role="presentation" class="text-center">
-                                <a href="/"><i class="fa fa-home"></i>Felix Su</a>
+                                <a href="/"><i class="fa fa-home"></i>&nbsp;&nbsp;首页</a>
                             </li>
                         
                             <li role="presentation" class="text-center">
-                                <a href="/categories"><i class="fa fa-list"></i>分类</a>
+                                <a href="/categories"><i class="fa fa-list"></i>&nbsp;&nbsp;分类</a>
                             </li>
                         
                             <li role="presentation" class="text-center">
-                                <a href="/about"><i class="fa fa-user"></i>关于我</a>
+                                <a href="/archives"><i class="fa fa-archive"></i>&nbsp;&nbsp;归档</a>
                             </li>
                         
                             <li role="presentation" class="text-center">
-                                <a href="/archives"><i class="fa fa-archive"></i>归档</a>
+                                <a href="/about"><i class="fa fa-user"></i>&nbsp;&nbsp;关于我</a>
                             </li>
                         
                     </ul>
@@ -112,11 +125,6 @@
     </div>
 </nav>
 
-<a href="http://github.com/eacdy">
-    <img style="position: absolute; top: 0; right: 0; border: 0;"
-        src="/img/forkme.png"
-        alt="Fork me on GitHub">
-</a>
 
     <section class="content-wrap">
         <div class="container">
@@ -150,7 +158,7 @@
 解压文件到 your-es-root/plugins/ik
 
 2 - 用 elasticsearch-plugin 安装
-1./bin/elasticsearch-plugin...
+1./bin/elasticsearch-plugin install h...
                 
             </p>
         </div>
@@ -205,7 +213,7 @@ elasticsearch版本 — 6.2.4
 123127.0.0.1    peer1127.0.0.1    peer2127.0.0.1    peer3
 
 分别修改elasticsearch.yaml文件
-123456789101112131415# 第一个配置文件改动如下# 集群名称(必须一样)cluster.name: es_cluster# 节点名称(必须不一样)node.name: es-1# 本机的...
+123456789101112131415# 第一个配置文件改动如下# 集群名称(必须一样)cluster.name: es_cluster# 节点名称(必须不一样)node.name: es-1# 本机的IP地址networ...
                 
             </p>
         </div>
@@ -253,23 +261,13 @@ elasticsearch版本 — 6.2.4
 
         
         
-    <div class="widget">
-        <h3 class="title">网站公告</h3>
-        <div class="notification">
-            <p>
-  <b>笔者微信</b>：jumping_me，欢迎加我<br/>
-  <b>公众号</b>：请扫描我的头像<br/>
-</p>
-        </div>
-    </div>
-
         
         
         <div class="widget">
             <div class="about-me">
-                <img src="/icons/wx.jpg" alt="Felix Su's Blog">
-                <h2>Feilx Su</h2>
-                <p>《Spring Cloud与Docker微服务架构实战》作者<br/></p>
+                <img src="/img/IMG_4611.jpg" alt="Felix Su's Blog">
+                <h2>Feilx Su' Blog</h2>
+                <p>Java，服务器后端开发<br/></p>
             </div>
         </div>
 
@@ -282,20 +280,12 @@ elasticsearch版本 — 6.2.4
       <h3 class="title">社交</h3> 
         <div class="content social">
             
-	            <a href="//github.com/eacdy" rel="external nofollow" title="GitHub" target="_blank">
+	            <a href="//github.com/FelixSuXP" rel="external nofollow" title="GitHub" target="_blank">
 			    	<i class="github fa fa-github"></i>
 			    </a>
             
-	            <a href="//gitee.com/itmuch" rel="external nofollow" title="Git@OSC" target="_blank">
+	            <a href="//gitee.com/FelixSuXP" rel="external nofollow" title="Git@OSC" target="_blank">
 			    	<i class="git fa fa-git"></i>
-			    </a>
-            
-	            <a href="mailto:eacdy0000@126.com" rel="external nofollow" title="邮箱" target="_blank">
-			    	<i class="envelope-o fa fa-envelope-o"></i>
-			    </a>
-            
-	            <a href="/atom.xml" rel="external nofollow" title="RSS" target="_blank">
-			    	<i class="feed fa fa-feed"></i>
 			    </a>
             
         </div>
@@ -332,23 +322,6 @@ elasticsearch版本 — 6.2.4
 
         
         
-    <div class="widget">
-        <h3 class="title">友链</h3>
-        <div class="content friends-link">
-        
-            <a href="http://blog.didispace.com/" class="fa" target="_blank">程序猿DD|翟永超</a>
-        
-            <a href="http://www.bysocket.com/" class="fa" target="_blank">泥瓦匠的博客</a>
-        
-            <a href="http://edisonxu.org/" class="fa" target="_blank">EdisonXu&#39;s Blog</a>
-        
-            <a href="http://blog.720ui.com/" class="fa" target="_blank">梁桂钊的博客</a>
-        
-            <a href="http://cxytiandi.com/" class="fa" target="_blank">猿天地</a>
-        
-        </div>
-    </div>
-
 
         
     </aside>
@@ -392,12 +365,6 @@ elasticsearch版本 — 6.2.4
             </div>
             <div class="col-sm-12">
                 <span>Copyright &copy; 2019
-                </span> |
-                <span>
-                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
-                </span> |
-                <span>
-                    Theme by <a href="//github.com/itmuch/hexo-theme-itmuch.git" class="copyright-links" target="_blank" rel="nofollow">ITMuch</a>
                 </span>
             </div>
         </div>

@@ -29,7 +29,7 @@
     <!--Title-->
 
 
-<title>分类: docker | Felix Su&#39;s Blog</title>
+<title>Felix Su&#39;s Blog</title>
 
 
     <link rel="alternate" href="/atom.xml" title="Felix Su&#39;s Blog" type="application/atom+xml">
@@ -130,168 +130,89 @@
         <div class="container">
             <div class="row">
                 <main class="col-md-8 main-content ">
-                    <h3>
+                    
+
+
+
+
+<article class="post">
     
-        docker
+    <div class="post-content">
+        <div class="post-head home-post-head">
+            <h1 class="post-title">
+                <a href="/2019/06/22/任务调度的 Java 实现方法与比较/">任务调度的 Java 实现方法与比较</a>
+            </h1>
+            <div class="post-meta">  &bull;
+                <time class="post-date" datetime="" title="">
+                    2019年06月22日
+                </time>
+            </div>
+        </div>
+        <p class="brief">
+            
+                #任务调度的 Java 实现方法与比较
+前言任务调度是指基于给定时间点，给定时间间隔或者给定执行次数自动执行任务。本文由浅入深介绍四种任务调度的 Java 实现：
+
+Timer
+ScheduledExecutor
+开源工具包 Quartz
+开源工具包 JCronTab
+
+此外，为结合实现复杂的任务调度，本文还将介绍 Calendar 的一些使用方法。
+Timer相信大家都已经非常熟悉 java.util.Timer 了，它是最简单的一种实现任务调度的方法，下面给出一个具体的例子：
+清单 1...
+            
+        </p>
+    </div>
     
-</h3>
+        <footer class="post-footer clearfix">
+            <div class="pull-left tag-list">
+                <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/分布式任务调度系统">
+            分布式任务调度系统
+        </a>
+    </span>
+    
 
-    <article class="post">
-        
-        <div class="post-content">
-            <div class="post-head home-post-head">
-                <h1 class="post-title">
-                    <a href="/2019/06/22/Docker容器日志清理/">Docker安装gitlab</a>
-                </h1>
-                <div class="post-meta">  &bull;
-                    <time class="post-date" datetime="" title="">
-                        2019年06月22日
-                    </time>
-                </div>
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/分布式任务调度系统" title='分布式任务调度系统'>
+                        分布式任务调度系统
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+</div>
+
             </div>
-            <p class="brief">
-                
-                    Docker容器日志清理清理Docker容器日志（治标）新建日志清理脚本clean_docker_log.sh，内容如下：
-123456789#!/bin/shecho &#34;======== start clean docker containers logs ========&#34;logs=$(find /var/lib/docker/containers/ -name *-json.log)for log in $logs        do                echo &#34;cle...
-                
-            </p>
-        </div>
-    </article>
- 
-    <article class="post">
-        
-        <div class="post-content">
-            <div class="post-head home-post-head">
-                <h1 class="post-title">
-                    <a href="/2019/06/22/docker安装gitlab/">Docker安装gitlab</a>
-                </h1>
-                <div class="post-meta">  &bull;
-                    <time class="post-date" datetime="" title="">
-                        2019年06月22日
-                    </time>
-                </div>
+
+            <div class="post-permalink">
+                <a href="/2019/06/22/任务调度的 Java 实现方法与比较/" class="btn btn-default">阅读全文</a>
             </div>
-            <p class="brief">
-                
-                    Docker安装gitlab1、docker-compose.yaml123456789101112131415version: &#39;3.0&#39;services:    gitlab:        image: gitlab/gitlab-ce        restart: always        container_name: gitlab        ports:            - &#34;10443:443&#34;            - &#34;10080:80&#34;          ...
-                
-            </p>
-        </div>
-    </article>
- 
-    <article class="post">
-        
-        <div class="post-content">
-            <div class="post-head home-post-head">
-                <h1 class="post-title">
-                    <a href="/2019/06/22/docker加速器配置/">docker 加速器</a>
-                </h1>
-                <div class="post-meta">  &bull;
-                    <time class="post-date" datetime="" title="">
-                        2019年06月22日
-                    </time>
-                </div>
-            </div>
-            <p class="brief">
-                
-                    docker 加速器常用的加速器服务：
-Docker 官方的中国镜像加速器：从2017年6月9日起，Docker 官方提供了在中国的加速器，以解决墙的问题。不用注册，直接使用加速器地址：https://registry.docker-cn.com 即可。
-中国科技大学的镜像加速器：中科大的加速器不用注册，直接使用地址 https://docker.mirrors.ustc.edu.cn/ 配置加速器即可。进一步的信息可以访问：http://mirrors.ustc.edu.cn/help/...
-                
-            </p>
-        </div>
-    </article>
- 
-    <article class="post">
-        
-        <div class="post-content">
-            <div class="post-head home-post-head">
-                <h1 class="post-title">
-                    <a href="/2019/06/22/修改Docker的默认镜像存储位置/">修改Docker的默认镜像存储位置</a>
-                </h1>
-                <div class="post-meta">  &bull;
-                    <time class="post-date" datetime="" title="">
-                        2019年06月22日
-                    </time>
-                </div>
-            </div>
-            <p class="brief">
-                
-                    修改Docker的默认镜像存储位置默认情况下Docker的存放位置为：/var/lib/docker可以通过下面命令查看具体位置：
-1sudo docker info | grep &#34;Docker Root Dir&#34;
-
-数据盘挂在 /data
-方案1：使用软链接方式（不建议，可以了解一下）1.首先停掉Docker服务：
-1systemctl restart docker
-
-或者
-1service docker stop
-
-2.对之前的数据做个文件备份
-1tar -zcC /var/lib/...
-                
-            </p>
-        </div>
-    </article>
- 
-    <article class="post">
-        
-        <div class="post-content">
-            <div class="post-head home-post-head">
-                <h1 class="post-title">
-                    <a href="/2019/06/22/安装docker/">Linux 安装 docker</a>
-                </h1>
-                <div class="post-meta">  &bull;
-                    <time class="post-date" datetime="" title="">
-                        2019年06月22日
-                    </time>
-                </div>
-            </div>
-            <p class="brief">
-                
-                    Linux 安装 docker手动安装帮助 (阿里云ECS可以通过内网安装，见注释部分内容)CentOS 7 (使用yum进行安装)123456789101112131415161718192021222324252627282930313233343536# step 1: 安装必要的一些系统工具sudo yum updatesudo yum install -y yum-utils device-mapper-persistent-data lvm2# Step 2: 添加软件源信息s...
-                
-            </p>
-        </div>
-    </article>
- 
-    <article class="post">
-        
-        <div class="post-content">
-            <div class="post-head home-post-head">
-                <h1 class="post-title">
-                    <a href="/2019/06/22/安装docker-compose/">安装docker-compose</a>
-                </h1>
-                <div class="post-meta">  &bull;
-                    <time class="post-date" datetime="" title="">
-                        2019年06月22日
-                    </time>
-                </div>
-            </div>
-            <p class="brief">
-                
-                    安装docker-compose1sudo curl -L &amp;quot;https://github.com/docker/compose/releases/download/1.24.0/docker-compose-$(uname -s)-$(uname -m)&amp;quot; -o /usr/local/bin/docker-compose
-
-1sudo chmod +x /usr/local/bin/docker-compose
+        </footer>
+    
+</article>
 
 
-                
-            </p>
-        </div>
-    </article>
- 
 
 
     <nav class="pagination" role="navigation">
         <div id="page-nav">
-            <span class="page-number current">1</span><a class="page-number" href="/categories/docker/page/2/">2</a><a class="extend next" rel="next" href="/categories/docker/page/2/"><i class='fa fa-angle-right'></i></a>
+            <a class="extend prev" rel="prev" href="/page/2/"><i class='fa fa-angle-left'></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
         </div>
     </nav>
-
-
-
-
-
 
 
 

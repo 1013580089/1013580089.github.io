@@ -1066,7 +1066,7 @@ pre {
   padding-top: 1em;
   background-color: #fff;
   top: 0;
-  bottom: 70px;
+  /* bottom: 100px; */
   overflow-y: auto;
 }
 #article-toc ol {
@@ -1100,7 +1100,7 @@ pre {
 ====================================================*/
 .copyright {
   background: #111;
-  font-size: 13px;
+  font-size: 15px;
   text-align: center;
   color: #666666;
   padding-top: 20px;
@@ -1604,8 +1604,9 @@ pre .javascript .function {
   text-align: center;
 }
 .about-me h2 {
-  margin: 5px;
+  margin: 15px;
 }
 .about-me img {
-  width: 100%;
+  width: 50%;
+  border-radius: 200px;
 }
