@@ -247,7 +247,7 @@ E-Job　：　当当网开源，贡献者17人;　github有2524star...">
 <li>调度逻辑和QuartzJobBean耦合在同一个项目中，这将导致一个问题，在调度任务数量逐渐增多，同时调度任务逻辑逐渐加重的情况加，此时调度系统的性能将大大受限于业务；</li>
 <li>Quartz关注点在于定时任务而非数据，并无一套根据数据处理而定制化的流程。虽然Quartz可以基于数据库实现作业的高可用，但缺少分布式并行调度的功能。</li>
 </ul>
-<h1 id="综合对比"><a href="#综合对比" class="headerlink" title="综合对比"></a>综合对比</h1><p>​         <img src="/img/eROnCDuL3J0W0364.png!thumbnail.png" alt="img">       </p>
+<h1 id="综合对比"><a href="#综合对比" class="headerlink" title="综合对比"></a>综合对比</h1><p>​         <img src="/images/eROnCDuL3J0W0364.png!thumbnail.png" alt="img">       </p>
 <h1 id="总结和结论"><a href="#总结和结论" class="headerlink" title="总结和结论"></a>总结和结论</h1><p>共同点： E-Job和X-job都有广泛的用户基础和完整的技术文档，都能满足定时任务的基本功能需求。</p>
 <p>不同点</p>
 <p>X-Job 侧重的业务实现的简单和管理的方便，学习成本简单，失败策略和路由策略丰富。推荐使用在“用户基数相对少，服务器数量在一定范围内”的情景下使用</p>
