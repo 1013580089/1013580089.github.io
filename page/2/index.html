@@ -203,7 +203,7 @@ Docker 官方的中国镜像加速器：从2017年6月9日起，Docker 官方提
     <div class="post-content">
         <div class="post-head home-post-head">
             <h1 class="post-title">
-                <a href="/2019/06/22/修改Docker的默认镜像存储位置/">修改Docker的默认镜像存储位置</a>
+                <a href="/2019/06/22/安装docker-compose/">安装docker-compose</a>
             </h1>
             <div class="post-meta">  &bull;
                 <time class="post-date" datetime="" title="">
@@ -213,18 +213,11 @@ Docker 官方的中国镜像加速器：从2017年6月9日起，Docker 官方提
         </div>
         <p class="brief">
             
-                修改Docker的默认镜像存储位置默认情况下Docker的存放位置为：/var/lib/docker可以通过下面命令查看具体位置：
-1sudo docker info | grep &#34;Docker Root Dir&#34;
+                安装docker-compose1sudo curl -L &amp;quot;https://github.com/docker/compose/releases/download/1.24.0/docker-compose-$(uname -s)-$(uname -m)&amp;quot; -o /usr/local/bin/docker-compose
 
-数据盘挂在 /data
-方案1：使用软链接方式（不建议，可以了解一下）1.首先停掉Docker服务：
-1systemctl restart docker
+1sudo chmod +x /usr/local/bin/docker-compose
 
-或者
-1service docker stop
 
-2.对之前的数据做个文件备份
-1tar -zcC /var/lib/...
             
         </p>
     </div>
@@ -263,7 +256,7 @@ Docker 官方的中国镜像加速器：从2017年6月9日起，Docker 官方提
             </div>
 
             <div class="post-permalink">
-                <a href="/2019/06/22/修改Docker的默认镜像存储位置/" class="btn btn-default">阅读全文</a>
+                <a href="/2019/06/22/安装docker-compose/" class="btn btn-default">阅读全文</a>
             </div>
         </footer>
     
@@ -406,71 +399,6 @@ E-Job　：　当当网开源，贡献者17人;　github有2524star、1015fork�
     <div class="post-content">
         <div class="post-head home-post-head">
             <h1 class="post-title">
-                <a href="/2019/06/22/安装docker-compose/">安装docker-compose</a>
-            </h1>
-            <div class="post-meta">  &bull;
-                <time class="post-date" datetime="" title="">
-                    2019年06月22日
-                </time>
-            </div>
-        </div>
-        <p class="brief">
-            
-                安装docker-compose1sudo curl -L &amp;quot;https://github.com/docker/compose/releases/download/1.24.0/docker-compose-$(uname -s)-$(uname -m)&amp;quot; -o /usr/local/bin/docker-compose
-
-1sudo chmod +x /usr/local/bin/docker-compose
-
-
-            
-        </p>
-    </div>
-    
-        <footer class="post-footer clearfix">
-            <div class="pull-left tag-list">
-                <div class="post-meta">
-    
-    
-    <span class="categories-meta fa-wrap">
-        <i class="fa fa-folder-open-o"></i>
-        <a href="/categories/docker">
-            docker
-        </a>
-    </span>
-    
-
-    
-    <span class="fa-wrap">
-        <i class="fa fa-tags"></i>
-        <span class="tags-meta">
-            
-                
-                    <a href="/tags/docker" title='docker'>
-                        docker
-                    </a>
-                
-            
-        </span>
-    </span>
-    
-
-    
-</div>
-
-            </div>
-
-            <div class="post-permalink">
-                <a href="/2019/06/22/安装docker-compose/" class="btn btn-default">阅读全文</a>
-            </div>
-        </footer>
-    
-</article>
-
-
-<article class="post">
-    
-    <div class="post-content">
-        <div class="post-head home-post-head">
-            <h1 class="post-title">
                 <a href="/2019/06/22/非root用户运行docker/">非root用户运行docker</a>
             </h1>
             <div class="post-meta">  &bull;
@@ -530,6 +458,68 @@ E-Job　：　当当网开源，贡献者17人;　github有2524star、1015fork�
 
             <div class="post-permalink">
                 <a href="/2019/06/22/非root用户运行docker/" class="btn btn-default">阅读全文</a>
+            </div>
+        </footer>
+    
+</article>
+
+
+<article class="post">
+    
+    <div class="post-content">
+        <div class="post-head home-post-head">
+            <h1 class="post-title">
+                <a href="/2019/06/22/Docker容器日志清理/">Docker安装gitlab</a>
+            </h1>
+            <div class="post-meta">  &bull;
+                <time class="post-date" datetime="" title="">
+                    2019年06月22日
+                </time>
+            </div>
+        </div>
+        <p class="brief">
+            
+                Docker容器日志清理清理Docker容器日志（治标）新建日志清理脚本clean_docker_log.sh，内容如下：
+123456789#!/bin/shecho &#34;======== start clean docker containers logs ========&#34;logs=$(find /var/lib/docker/containers/ -name *-json.log)for log in $logs        do                echo &#34;cle...
+            
+        </p>
+    </div>
+    
+        <footer class="post-footer clearfix">
+            <div class="pull-left tag-list">
+                <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/docker">
+            docker
+        </a>
+    </span>
+    
+
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/docker" title='docker'>
+                        docker
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+</div>
+
+            </div>
+
+            <div class="post-permalink">
+                <a href="/2019/06/22/Docker容器日志清理/" class="btn btn-default">阅读全文</a>
             </div>
         </footer>
     
