@@ -141,6 +141,27 @@
         <div class="post-content">
             <div class="post-head home-post-head">
                 <h1 class="post-title">
+                    <a href="/2019/06/22/docker安装gitlab/">Docker安装gitlab</a>
+                </h1>
+                <div class="post-meta">  &bull;
+                    <time class="post-date" datetime="" title="">
+                        2019年06月22日
+                    </time>
+                </div>
+            </div>
+            <p class="brief">
+                
+                    Docker安装gitlab1、docker-compose.yaml123456789101112131415version: &#39;3.0&#39;services:    gitlab:        image: gitlab/gitlab-ce        restart: always        container_name: gitlab        ports:            - &#34;10443:443&#34;            - &#34;10080:80&#34;          ...
+                
+            </p>
+        </div>
+    </article>
+ 
+    <article class="post">
+        
+        <div class="post-content">
+            <div class="post-head home-post-head">
+                <h1 class="post-title">
                     <a href="/2019/06/22/Docker容器日志清理/">Docker安装gitlab</a>
                 </h1>
                 <div class="post-meta">  &bull;
@@ -153,50 +174,6 @@
                 
                     Docker容器日志清理清理Docker容器日志（治标）新建日志清理脚本clean_docker_log.sh，内容如下：
 123456789#!/bin/shecho &#34;======== start clean docker containers logs ========&#34;logs=$(find /var/lib/docker/containers/ -name *-json.log)for log in $logs        do                echo &#34;cle...
-                
-            </p>
-        </div>
-    </article>
- 
-    <article class="post">
-        
-        <div class="post-content">
-            <div class="post-head home-post-head">
-                <h1 class="post-title">
-                    <a href="/2019/06/22/docker加速器配置/">docker 加速器</a>
-                </h1>
-                <div class="post-meta">  &bull;
-                    <time class="post-date" datetime="" title="">
-                        2019年06月22日
-                    </time>
-                </div>
-            </div>
-            <p class="brief">
-                
-                    docker 加速器常用的加速器服务：
-Docker 官方的中国镜像加速器：从2017年6月9日起，Docker 官方提供了在中国的加速器，以解决墙的问题。不用注册，直接使用加速器地址：https://registry.docker-cn.com 即可。
-中国科技大学的镜像加速器：中科大的加速器不用注册，直接使用地址 https://docker.mirrors.ustc.edu.cn/ 配置加速器即可。进一步的信息可以访问：http://mirrors.ustc.edu.cn/help/...
-                
-            </p>
-        </div>
-    </article>
- 
-    <article class="post">
-        
-        <div class="post-content">
-            <div class="post-head home-post-head">
-                <h1 class="post-title">
-                    <a href="/2019/06/22/docker安装gitlab/">Docker安装gitlab</a>
-                </h1>
-                <div class="post-meta">  &bull;
-                    <time class="post-date" datetime="" title="">
-                        2019年06月22日
-                    </time>
-                </div>
-            </div>
-            <p class="brief">
-                
-                    Docker安装gitlab1、docker-compose.yaml123456789101112131415version: &#39;3.0&#39;services:    gitlab:        image: gitlab/gitlab-ce        restart: always        container_name: gitlab        ports:            - &#34;10443:443&#34;            - &#34;10080:80&#34;          ...
                 
             </p>
         </div>
@@ -280,6 +257,29 @@ Docker 官方的中国镜像加速器：从2017年6月9日起，Docker 官方提
         </div>
     </article>
  
+    <article class="post">
+        
+        <div class="post-content">
+            <div class="post-head home-post-head">
+                <h1 class="post-title">
+                    <a href="/2019/06/22/docker加速器配置/">docker 加速器</a>
+                </h1>
+                <div class="post-meta">  &bull;
+                    <time class="post-date" datetime="" title="">
+                        2019年06月22日
+                    </time>
+                </div>
+            </div>
+            <p class="brief">
+                
+                    docker 加速器常用的加速器服务：
+Docker 官方的中国镜像加速器：从2017年6月9日起，Docker 官方提供了在中国的加速器，以解决墙的问题。不用注册，直接使用加速器地址：https://registry.docker-cn.com 即可。
+中国科技大学的镜像加速器：中科大的加速器不用注册，直接使用地址 https://docker.mirrors.ustc.edu.cn/ 配置加速器即可。进一步的信息可以访问：http://mirrors.ustc.edu.cn/help/...
+                
+            </p>
+        </div>
+    </article>
+ 
 
 
     <nav class="pagination" role="navigation">
@@ -335,7 +335,7 @@ Docker 官方的中国镜像加速器：从2017年6月9日起，Docker 官方提
         <div class="widget">
             <div class="about-me">
                 <img src="/img/IMG_4611.jpg" alt="Felix Su's Blog">
-                <h2>Feilx Su</h2>
+                <h2>Felix Su</h2>
                 <p>Java，服务器后端开发<br/></p>
             </div>
         </div>
