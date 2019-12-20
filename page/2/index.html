@@ -200,132 +200,6 @@ Docker 官方的中国镜像加速器：从2017年6月9日起，Docker 官方提
 
 <article class="post">
     
-    <div class="post-content">
-        <div class="post-head home-post-head">
-            <h1 class="post-title">
-                <a href="/2019/06/22/安装docker/">Linux 安装 docker</a>
-            </h1>
-            <div class="post-meta">  &bull;
-                <time class="post-date" datetime="" title="">
-                    2019年06月22日
-                </time>
-            </div>
-        </div>
-        <p class="brief">
-            
-                Linux 安装 docker手动安装帮助 (阿里云ECS可以通过内网安装，见注释部分内容)CentOS 7 (使用yum进行安装)123456789101112131415161718192021222324252627282930313233343536# step 1: 安装必要的一些系统工具sudo yum updatesudo yum install -y yum-utils device-mapper-persistent-data lvm2# Step 2: 添加软件源信息s...
-            
-        </p>
-    </div>
-    
-        <footer class="post-footer clearfix">
-            <div class="pull-left tag-list">
-                <div class="post-meta">
-    
-    
-    <span class="categories-meta fa-wrap">
-        <i class="fa fa-folder-open-o"></i>
-        <a href="/categories/docker">
-            docker
-        </a>
-    </span>
-    
-
-    
-    <span class="fa-wrap">
-        <i class="fa fa-tags"></i>
-        <span class="tags-meta">
-            
-                
-                    <a href="/tags/docker" title='docker'>
-                        docker
-                    </a>
-                
-            
-        </span>
-    </span>
-    
-
-    
-</div>
-
-            </div>
-
-            <div class="post-permalink">
-                <a href="/2019/06/22/安装docker/" class="btn btn-default">阅读全文</a>
-            </div>
-        </footer>
-    
-</article>
-
-
-<article class="post">
-    
-    <div class="post-content">
-        <div class="post-head home-post-head">
-            <h1 class="post-title">
-                <a href="/2019/06/22/安装docker-compose/">安装docker-compose</a>
-            </h1>
-            <div class="post-meta">  &bull;
-                <time class="post-date" datetime="" title="">
-                    2019年06月22日
-                </time>
-            </div>
-        </div>
-        <p class="brief">
-            
-                安装docker-compose1sudo curl -L &amp;quot;https://github.com/docker/compose/releases/download/1.24.0/docker-compose-$(uname -s)-$(uname -m)&amp;quot; -o /usr/local/bin/docker-compose
-
-1sudo chmod +x /usr/local/bin/docker-compose
-
-
-            
-        </p>
-    </div>
-    
-        <footer class="post-footer clearfix">
-            <div class="pull-left tag-list">
-                <div class="post-meta">
-    
-    
-    <span class="categories-meta fa-wrap">
-        <i class="fa fa-folder-open-o"></i>
-        <a href="/categories/docker">
-            docker
-        </a>
-    </span>
-    
-
-    
-    <span class="fa-wrap">
-        <i class="fa fa-tags"></i>
-        <span class="tags-meta">
-            
-                
-                    <a href="/tags/docker" title='docker'>
-                        docker
-                    </a>
-                
-            
-        </span>
-    </span>
-    
-
-    
-</div>
-
-            </div>
-
-            <div class="post-permalink">
-                <a href="/2019/06/22/安装docker-compose/" class="btn btn-default">阅读全文</a>
-            </div>
-        </footer>
-    
-</article>
-
-
-<article class="post">
-    
         <div class="post-media">
             <a href="/2019/06/22/分布式任务调度系统对比/">
                 <img class="img-ajax" src="/img/loading.gif"  data-src="/images/eROnCDuL3J0W0364.png!thumbnail.png"   alt="分布式任务调度系统对比">
@@ -399,7 +273,7 @@ E-Job　：　当当网开源，贡献者17人;　github有2524star、1015fork�
     <div class="post-content">
         <div class="post-head home-post-head">
             <h1 class="post-title">
-                <a href="/2019/06/22/Docker容器日志清理/">Docker安装gitlab</a>
+                <a href="/2019/06/22/安装docker-compose/">安装docker-compose</a>
             </h1>
             <div class="post-meta">  &bull;
                 <time class="post-date" datetime="" title="">
@@ -409,8 +283,11 @@ E-Job　：　当当网开源，贡献者17人;　github有2524star、1015fork�
         </div>
         <p class="brief">
             
-                Docker容器日志清理清理Docker容器日志（治标）新建日志清理脚本clean_docker_log.sh，内容如下：
-123456789#!/bin/shecho &#34;======== start clean docker containers logs ========&#34;logs=$(find /var/lib/docker/containers/ -name *-json.log)for log in $logs        do                echo &#34;cle...
+                安装docker-compose1sudo curl -L &amp;quot;https://github.com/docker/compose/releases/download/1.24.0/docker-compose-$(uname -s)-$(uname -m)&amp;quot; -o /usr/local/bin/docker-compose
+
+1sudo chmod +x /usr/local/bin/docker-compose
+
+
             
         </p>
     </div>
@@ -449,7 +326,129 @@ E-Job　：　当当网开源，贡献者17人;　github有2524star、1015fork�
             </div>
 
             <div class="post-permalink">
-                <a href="/2019/06/22/Docker容器日志清理/" class="btn btn-default">阅读全文</a>
+                <a href="/2019/06/22/安装docker-compose/" class="btn btn-default">阅读全文</a>
+            </div>
+        </footer>
+    
+</article>
+
+
+<article class="post">
+    
+    <div class="post-content">
+        <div class="post-head home-post-head">
+            <h1 class="post-title">
+                <a href="/2019/06/22/安装docker/">Linux 安装 docker</a>
+            </h1>
+            <div class="post-meta">  &bull;
+                <time class="post-date" datetime="" title="">
+                    2019年06月22日
+                </time>
+            </div>
+        </div>
+        <p class="brief">
+            
+                Linux 安装 docker手动安装帮助 (阿里云ECS可以通过内网安装，见注释部分内容)CentOS 7 (使用yum进行安装)123456789101112131415161718192021222324252627282930313233343536# step 1: 安装必要的一些系统工具sudo yum updatesudo yum install -y yum-utils device-mapper-persistent-data lvm2# Step 2: 添加软件源信息s...
+            
+        </p>
+    </div>
+    
+        <footer class="post-footer clearfix">
+            <div class="pull-left tag-list">
+                <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/docker">
+            docker
+        </a>
+    </span>
+    
+
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/docker" title='docker'>
+                        docker
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+</div>
+
+            </div>
+
+            <div class="post-permalink">
+                <a href="/2019/06/22/安装docker/" class="btn btn-default">阅读全文</a>
+            </div>
+        </footer>
+    
+</article>
+
+
+<article class="post">
+    
+    <div class="post-content">
+        <div class="post-head home-post-head">
+            <h1 class="post-title">
+                <a href="/2019/06/22/docker安装gitlab/">Docker安装gitlab</a>
+            </h1>
+            <div class="post-meta">  &bull;
+                <time class="post-date" datetime="" title="">
+                    2019年06月22日
+                </time>
+            </div>
+        </div>
+        <p class="brief">
+            
+                Docker安装gitlab1、docker-compose.yaml123456789101112131415version: &#39;3.0&#39;services:    gitlab:        image: gitlab/gitlab-ce        restart: always        container_name: gitlab        ports:            - &#34;10443:443&#34;            - &#34;10080:80&#34;          ...
+            
+        </p>
+    </div>
+    
+        <footer class="post-footer clearfix">
+            <div class="pull-left tag-list">
+                <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/docker">
+            docker
+        </a>
+    </span>
+    
+
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/docker" title='docker'>
+                        docker
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+</div>
+
+            </div>
+
+            <div class="post-permalink">
+                <a href="/2019/06/22/docker安装gitlab/" class="btn btn-default">阅读全文</a>
             </div>
         </footer>
     
